@@ -1,11 +1,143 @@
 {
   "version": 1,
   "skills": {
+    "cut-as-code": {
+      "source": "WhiteTowerAI/cut-as-code",
+      "sourceType": "github",
+      "skillPath": "skills/cut-as-code/SKILL.md",
+      "computedHash": "4f2233825f203d48817c184fcd04ef46770fe7a15ccf161642c6b6e4b8965173"
+    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
       "skillPath": "skills/find-skills/SKILL.md",
       "computedHash": "913b9d37d0d54047dd65222bb8c67b2bf04e3cb87dcad1729068d7a8b2c8c396"
+    },
+    "remotion-best-practices": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-best-practices/SKILL.md",
+      "computedHash": "9a4c0a0f9e3cc4613cbe351bb6be48568eb1cca0b06995aeae9e91292102aa16"
+    },
+    "remotion-captions": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-captions/SKILL.md",
+      "computedHash": "83e853f96f4f10526c166944f2bdb1752ee28d6bf1ddd9532b899c4d05228c2a"
+    },
+    "remotion-create": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-create/SKILL.md",
+      "computedHash": "83db7daec2165d1e1801e7e279a815baf84da5705302952b6b4af6c6887f9c56"
+    },
+    "remotion-docs": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-docs/SKILL.md",
+      "computedHash": "4ded99e054724106ef15d64051f9b2d6d52d1afb7b31cd48f39e75624036051c"
+    },
+    "remotion-interactivity": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-interactivity/SKILL.md",
+      "computedHash": "f595a3fd64971123a776e77690a723599ca2f48f7f96539835bab352d058066c"
+    },
+    "remotion-license": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-license/SKILL.md",
+      "computedHash": "1a38caa7aa9c6e12956b415ccc0ecd445672ce72a769e29d0cf6557289dad5e7"
+    },
+    "remotion-maps": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-maps/SKILL.md",
+      "computedHash": "cd5c20dc2d35fa5c52bcfa04d1d67b343f1ddc9f5561aa5b2a10884db8f4bcd4"
+    },
+    "remotion-markup": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-markup/SKILL.md",
+      "computedHash": "387d42cfbfe5acd1a2a85c3a2f0fe79b67272bc33ff98edf10c75634e87492c8"
+    },
+    "remotion-multimedia": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-multimedia/SKILL.md",
+      "computedHash": "7ec158220d479a68b11b7fb593c8f0b777c0da44c6bf4a4d45a87abbdc31926d"
+    },
+    "remotion-render": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-render/SKILL.md",
+      "computedHash": "1f82f35a2fd50b597d4f77cf87b0268b0e8047277a123b680e046991070b4126"
+    },
+    "remotion-saas": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-saas/SKILL.md",
+      "computedHash": "4dcc6bb72f2b5eab548640b5188295221796053148ce87defc9e480e7498b916"
+    },
+    "remotion-studio": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-studio/SKILL.md",
+      "computedHash": "d65d0933b789017f33aea95d1f450e4b0873a7102a09e104729862fb1146b775"
+    },
+    "remotion-upgrade": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-upgrade/SKILL.md",
+      "computedHash": "461016a20e42475c18319365c8b1dc50efbb86da31e5d3dddd7b150c493e8ff7"
+    },
+    "video-add-b-roll": {
+      "source": "WhiteTowerAI/cut-as-code",
+      "sourceType": "github",
+      "skillPath": "skills/video-add-b-roll/SKILL.md",
+      "computedHash": "f01fbd064555ea75dcc87bf9c4e9a262e9f94e684b95b40fad4c93af184fef81"
+    },
+    "video-add-captions": {
+      "source": "WhiteTowerAI/cut-as-code",
+      "sourceType": "github",
+      "skillPath": "skills/video-add-captions/SKILL.md",
+      "computedHash": "acb4321d6bb4d55eac076521d682d6e63005f113749d55946d8bba2c49c2bb14"
+    },
+    "video-add-content-cards": {
+      "source": "WhiteTowerAI/cut-as-code",
+      "sourceType": "github",
+      "skillPath": "skills/video-add-content-cards/SKILL.md",
+      "computedHash": "0336a1c136eb07379bb705fb7f7bba18f864992a62e75d9f7d7dfbd54713532a"
+    },
+    "video-color-grade": {
+      "source": "WhiteTowerAI/cut-as-code",
+      "sourceType": "github",
+      "skillPath": "skills/video-color-grade/SKILL.md",
+      "computedHash": "738885851e3f5f327debc9acfe6d8b0cdb6cb53c9b56d8f6b2db24b369ffc70c"
+    },
+    "video-cut": {
+      "source": "WhiteTowerAI/cut-as-code",
+      "sourceType": "github",
+      "skillPath": "skills/video-cut/SKILL.md",
+      "computedHash": "7c6c1eb6f2844beb8a5f2513d8ef2d0a38d529568f31626fa3c41167ce671226"
+    },
+    "video-edit-compare": {
+      "source": "WhiteTowerAI/cut-as-code",
+      "sourceType": "github",
+      "skillPath": "skills/video-edit-compare/SKILL.md",
+      "computedHash": "ef6f41018209d0252831d4e87b1e83feb96aad27644261c31734023e828be3a9"
+    },
+    "video-to-shorts": {
+      "source": "WhiteTowerAI/cut-as-code",
+      "sourceType": "github",
+      "skillPath": "skills/video-to-shorts/SKILL.md",
+      "computedHash": "19e65b3539c1cb3016f01d6d73d52bf1fc5ca00d42d94a5d4b40149490b1f911"
+    },
+    "video-understand": {
+      "source": "WhiteTowerAI/cut-as-code",
+      "sourceType": "github",
+      "skillPath": "skills/video-understand/SKILL.md",
+      "computedHash": "d6c70850478013ccfc864025ee94ab8008b95965acca59db28f9bf75493ef548"
     }
   }
 }
