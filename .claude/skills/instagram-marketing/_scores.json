@@ -1,0 +1,48 @@
+{
+  "version": "1.1.0",
+  "skillHash": "sha256:e621dd6a98e45bf56d7cfb4e14d878ed07338cb40a785d84e965b30a37cdee7f",
+  "scoredAt": "2026-10-24T16:50:17.052Z",
+  "backend": "ollama",
+  "model": "gpt-oss:20b-64k",
+  "quality": {
+    "score": 100,
+    "dimensions": {
+      "clarity": "PASS",
+      "completeness": "PASS",
+      "conciseness": "PASS",
+      "actionability": "PASS",
+      "crossPlatform": "PASS",
+      "examples": "PASS"
+    },
+    "issues": []
+  },
+  "security": {
+    "verdict": "SAFE",
+    "issues": []
+  },
+  "impact": {
+    "multiplier": 1.49,
+    "baselineAvg": 37,
+    "treatmentAvg": 55,
+    "scenarios": [
+      {
+        "name": "plan-2-week-vegan-chef-calendar",
+        "baseline": 45,
+        "treatment": 75,
+        "rationale": "Response B better covers caption structure, alt text per slide, CTA, and hashtag limits, while Response A lacks body/CTA and detailed alt text."
+      },
+      {
+        "name": "node-script-publish-reel",
+        "baseline": 45,
+        "treatment": 35,
+        "rationale": "Response A implements the Reel creation, publishing, and polling steps (though with some inaccuracies), whereas Response B only covers the OAuth flow and omits the core Reel operations, so A covers more rubric items."
+      },
+      {
+        "name": "compare-reel-carousel-analytics",
+        "baseline": 20,
+        "treatment": 55,
+        "rationale": "Response B correctly lists the required media‑level insights calls but omits the account‑level call and unsupported‑metric note; Response A fails to match the required metrics and lacks key calls."
+      }
+    ]
+  }
+}
