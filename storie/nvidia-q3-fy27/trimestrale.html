@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Nvidia trimestrale</title>
+<style>
+  :root{
+    --blu:#00539F; --blu-deep:#003B73; --oro:#F5B335; --oro-2:#FFD27A;
+    --verde:#76B900; --bianco:#FFFFFF; --soft:rgba(255,255,255,.72);
+    --card:rgba(0,30,70,.38); --line:rgba(255,255,255,.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#222;font-family:"Inter Display","Inter",sans-serif;color:var(--bianco)}
+  .slide{width:1080px;height:1920px;position:relative;overflow:hidden;
+    background:url(sfondo.png) center/cover no-repeat, var(--blu);margin:0 auto 40px}
+  .safe{position:absolute;left:80px;right:80px;top:270px;bottom:290px;display:flex;flex-direction:column}
+  .tag{display:inline-flex;align-items:center;gap:14px;align-self:flex-start;
+    background:rgba(0,0,0,.22);border:2px solid var(--line);border-radius:999px;
+    padding:14px 28px;font-size:30px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .dot{width:16px;height:16px;border-radius:50%;background:var(--verde);box-shadow:0 0 18px var(--verde)}
+  .num{font-variant-numeric:tabular-nums}
+  h1{font-size:96px;line-height:1.02;font-weight:800;letter-spacing:-.02em}
+  h2{font-size:76px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
+  .oro{color:var(--oro)} .verde{color:#9BE22D}
+  p.lead{font-size:44px;line-height:1.3;color:var(--soft);font-weight:500}
+  .card{background:var(--card);border:2px solid var(--line);border-radius:36px;padding:40px 44px;
+    backdrop-filter:blur(6px)}
+  .small{font-size:26px;color:rgba(255,255,255,.6);line-height:1.35}
+  .page{position:absolute;top:262px;right:80px;font-size:28px;font-weight:600;color:rgba(255,255,255,.55)}
+  .swipe{display:flex;align-items:center;gap:18px;font-size:38px;font-weight:700;color:var(--oro)}
+  .swipe svg{width:56px;height:56px}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. È USCITA LA TRIMESTRALE ============ -->
+<section class="slide" id="a1">
+  <div class="page">1/2</div>
+  <div class="safe">
+    <div class="tag"><span class="dot"></span>Ieri sera · a mercati chiusi</div>
+    <h2 style="margin-top:36px">È uscita la trimestrale<br>di <span class="verde">Nvidia</span>.</h2>
+    <p class="lead" style="margin-top:22px">E non riguarda solo chi ha l'azione: <b style="color:#fff">è dentro quasi tutti i portafogli</b>, anche in quelli che non lo sanno.</p>
+
+    <div style="font-size:30px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--oro);margin-top:36px">Quanto pesa negli indici più diffusi</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:22px">
+      <!-- S&P 500 -->
+      <div class="card" style="padding:28px 24px;text-align:center">
+        <svg width="230" height="230" viewBox="0 0 300 300">
+          <circle cx="150" cy="150" r="118" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="40"/>
+          <!-- C = 741.4 ; 6.1% = 45.2 -->
+          <circle cx="150" cy="150" r="118" fill="none" stroke="#9BE22D" stroke-width="40" stroke-dasharray="45.2 741.4" transform="rotate(-90 150 150)"/>
+          <text x="150" y="168" text-anchor="middle" font-size="76" font-weight="800" fill="#fff" font-family="Inter Display">6,1%</text>
+        </svg>
+        <div style="font-size:40px;font-weight:800;margin-top:8px">S&amp;P 500</div>
+        <div style="font-size:28px;color:var(--soft);margin-top:6px;line-height:1.3">≈ <b style="color:#fff">6 € ogni 100</b><br>sono Nvidia</div>
+      </div>
+      <!-- MSCI World -->
+      <div class="card" style="padding:28px 24px;text-align:center">
+        <svg width="230" height="230" viewBox="0 0 300 300">
+          <circle cx="150" cy="150" r="118" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="40"/>
+          <!-- 5.25% = 38.9 -->
+          <circle cx="150" cy="150" r="118" fill="none" stroke="#F5B335" stroke-width="40" stroke-dasharray="38.9 741.4" transform="rotate(-90 150 150)"/>
+          <text x="150" y="168" text-anchor="middle" font-size="76" font-weight="800" fill="#fff" font-family="Inter Display">5,25%</text>
+        </svg>
+        <div style="font-size:40px;font-weight:800;margin-top:8px">MSCI World</div>
+        <div style="font-size:28px;color:var(--soft);margin-top:6px;line-height:1.3"><b style="color:#fff">2° titolo</b> su oltre<br>1.200 aziende</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:24px;padding:26px 34px;background:rgba(245,179,53,.14);border-color:rgba(245,179,53,.5);display:flex;gap:24px;align-items:center">
+      <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#F5B335" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      <div style="font-size:34px;font-weight:700;line-height:1.3">Hai un ETF, un fondo azionario o un fondo pensione? <span class="oro">Molto probabilmente hai anche Nvidia.</span></div>
+    </div>
+
+    <div class="swipe" style="margin-top:26px">Com'è andata? Scorri
+      <svg viewBox="0 0 24 24" fill="none" stroke="#F5B335" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </div>
+
+    <div class="small" style="margin-top:auto;font-size:22px">Pesi indicativi: S&amp;P 500 al 12/11/2026 (portafoglio ETF SPY, State Street); MSCI World al 30/10/2026 (factsheet MSCI). Variano ogni giorno.</div>
+  </div>
+</section>
+
+<!-- ============ 2. UTILI + AFTER HOURS ============ -->
+<section class="slide" id="a2">
+  <div class="page">2/2</div>
+  <div class="safe">
+    <div class="tag"><span class="dot"></span>Com'è andata</div>
+    <h2 style="margin-top:36px">Utili <span class="verde">più che raddoppiati</span></h2>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px">
+      <div class="card" style="padding:26px 32px">
+        <div style="font-size:28px;color:var(--soft);font-weight:600">Utile netto in 3 mesi</div>
+        <div style="font-size:70px;font-weight:800;margin-top:6px" class="num oro">≈65 mld $</div>
+        <div style="font-size:28px;color:#9BE22D;font-weight:700">oltre 2 volte un anno fa</div>
+      </div>
+      <div class="card" style="padding:26px 32px">
+        <div style="font-size:28px;color:var(--soft);font-weight:600">Utile per azione</div>
+        <div style="font-size:70px;font-weight:800;margin-top:6px" class="num">2,68 $</div>
+        <div style="font-size:28px;color:#9BE22D;font-weight:700">+8% sulle stime (2,48 $)</div>
+      </div>
+    </div>
+    <p style="font-size:32px;line-height:1.35;margin-top:20px;font-weight:500;color:var(--soft)">In parole semplici: <b style="color:#fff">ha guadagnato più di quanto gli analisti si aspettassero</b>, e prevede di crescere ancora.</p>
+
+    <div style="font-size:30px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--oro);margin-top:28px">E il titolo? La notte dopo i conti</div>
+
+    <div class="card" style="margin-top:14px;padding:26px 30px 20px">
+      <svg width="860" height="390" viewBox="0 0 860 520">
+        <!-- y scale: 154 -> 440 ; 164 -> 40 ; 40px per $ -->
+        <line x1="40" y1="381" x2="840" y2="381" stroke="rgba(255,255,255,.4)" stroke-width="2" stroke-dasharray="8 8"/>
+        <text x="50" y="420" text-anchor="start" font-size="24" fill="rgba(255,255,255,.6)" font-family="Inter Display">chiusura 155,46 $</text>
+        <!-- area -->
+        <path d="M60 381 L170 381 L230 330 L300 210 L360 120 L410 101 L470 140 L540 200 L610 260 L680 330 L760 390 L820 401 L820 470 L60 470 Z" fill="rgba(155,226,45,.12)"/>
+        <path d="M60 381 L170 381 L230 330 L300 210 L360 120 L410 101 L470 140 L540 200 L610 260 L680 330 L760 390 L820 401" fill="none" stroke="#9BE22D" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- conti pubblicati -->
+        <text x="170" y="56" text-anchor="middle" font-size="26" font-weight="800" fill="#fff" font-family="Inter Display">CONTI</text>
+        <line x1="170" y1="72" x2="170" y2="470" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+        <rect x="240" y="440" width="164" opacity="0" height="44" rx="22" fill="#fff"/>
+        <text x="322" y="471" opacity="0" text-anchor="middle" font-size="24" font-weight="800" fill="#00539F" font-family="Inter Display">CONTI</text>
+        <!-- picco -->
+        <circle cx="410" cy="101" r="14" fill="#9BE22D" stroke="#fff" stroke-width="4"/>
+        <rect x="310" y="14" width="200" height="62" rx="16" fill="#76B900"/>
+        <text x="410" y="56" text-anchor="middle" font-size="34" font-weight="800" fill="#0A1A00" font-family="Inter Display">+4,8%</text>
+        <text x="530" y="108" font-size="26" font-weight="600" fill="#fff" font-family="Inter Display">≈163 $</text>
+        <!-- fine -->
+        <circle cx="820" cy="401" r="14" fill="#F5B335" stroke="#fff" stroke-width="4"/>
+        <rect x="700" y="290" width="150" height="56" rx="16" fill="#F5B335"/>
+        <text x="775" y="328" text-anchor="middle" font-size="30" font-weight="800" fill="#3A2400" font-family="Inter Display">≈ −0,5%</text>
+      </svg>
+      <div class="small">Andamento schematico, non in scala temporale. Contrattazioni after-hours del 17/11/2026.</div>
+    </div>
+
+    <div class="card" style="margin-top:20px;padding:24px 34px;background:rgba(245,179,53,.14);border-color:rgba(245,179,53,.5)">
+      <div style="font-size:33px;font-weight:700;line-height:1.3">📌 Prima l'entusiasmo, poi la prudenza: i conti erano ottimi, ma <span class="oro">il mercato li dava già per scontati</span>.</div>
+    </div>
+
+    <div class="small" style="margin-top:auto;font-size:22px">Fonti: Nvidia; LSEG; INDmoney; TradingKey; Reuters. Rilevazioni after-hours in orari diversi. Non è consulenza.</div>
+  </div>
+</section>
+</body>
+</html>
