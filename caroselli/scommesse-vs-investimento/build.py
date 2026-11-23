@@ -12,7 +12,7 @@ VINCITE = 135.8e9       # ADM, Bilancio 2024: vincite 2024
 SPESA = 21.5e9          # ADM, Bilancio 2024: spesa effettiva (perdite)
 GIOCATORI = 16.6e6      # Istat: italiani che hanno giocato con vincita in denaro nel 2024
 R_MSCI = 0.1008         # MSCI World (EUR) net, annualizzato 10 anni al 30/06/2025
-R_PRUD = 0.06           # scenario prudente
+R_PRUD = 0.04           # scenario prudente
 ANNI = 10
 TASSA = 0.26
 
@@ -104,8 +104,8 @@ S = []
 # 1 — HOOK
 S.append(slide(1, "blue", f"""
   <div class="pill">SCOMMESSE VS BORSA · 10 ANNI</div>
-  <h1 class="t1" style="top:262px">STESSI SOLDI<br>PER 10 ANNI.<br><span class="gold">UNO HA IL DOPPIO DELL'ALTRO.</span></h1>
-  <p class="lead" style="top:600px">{num(MESE)} € al mese: <b>schedine, gratta e vinci e slot</b><br>contro <b>un investimento in Borsa</b>. Indovina chi vince.</p>
+  <h1 class="t1" style="top:262px">LA SCHEDINA<br>TI STA COSTANDO<br><span class="gold" style="font-size:1.3em">78.000 €.</span></h1>
+  <p class="lead" style="top:600px">Stessi {num(MESE)} € al mese per 10 anni: <b>uno scommette, l'altro investe.</b><br>Alla fine uno ha <b class="gold">il doppio</b> dell'altro.</p>
   <div class="vs-wrap">
     <div class="vs-card">
       <img src="img/slot.jpg" style="object-position:50% 40%">
@@ -145,7 +145,7 @@ S.append(slide(3, "blue", f"""
   <div class="bgphoto"><img src="img/roulette.jpg"></div>
   <div class="pill">LA REGOLA DEL BANCO</div>
   <h1 class="t-one" style="top:262px">IL BANCO <span class="gold">VINCE SEMPRE.</span></h1>
-  <p class="lead" style="top:480px">Ogni <b>100 €</b> giocati, in media te ne tornano <b class="gold">86</b>. Gli altri <b class="redt">14</b> restano al banco.</p>
+  <p class="lead" style="top:480px">Ogni <b>100 €</b> giocati, in media te ne tornano <b class="gold">86</b>.<br>Gli altri <b class="redt">14</b> restano al banco.</p>
   <div class="dots-wrap" style="top:625px">
     <div class="dots">{dots}</div>
     <div class="dots-leg">
@@ -292,21 +292,31 @@ S.append(slide(8, "cream", f"""
 """, "Scorri: e se giochi meno?"))
 
 # 9 — TABELLA SCENARI (salvabile)
+EMO9 = {50: "🍕", 100: "⚽", 300: "🛒", MESE: "🔥"}
 trs9 = ""
 for m in (50, 100, 300, MESE):
-    s = scen(m)
-    trs9 += f'<div class="r9"><div class="m">{num(m)} €<small>/mese</small></div><div class="v red"><span>{eur(s["g"])}</span></div><div class="v gold"><span>{eur(s["a"])}</span></div><div class="v"><span>{eur(s["pn"])}</span></div></div>'
+    s9 = scen(m)
+    hot = " hot" if m == MESE else ""
+    trs9 += f"""<div class="r9b{hot}">
+      <div class="m9"><span class="e9">{EMO9[m]}</span><div><b>{num(m)} €</b><small>al mese</small></div></div>
+      <div class="c9 bet">{eur(s9["g"])}</div>
+      <div class="c9 inv">{eur(s9["a"])}<i>🏆</i></div>
+      <div class="c9 pru">{eur(s9["pn"])}</div>
+    </div>"""
 S.append(slide(9, "blue", f"""
   <div class="pill">DA SALVARE 🔖</div>
   <h1 class="t-one" style="top:262px">E SE GIOCHI <span class="gold">MENO?</span></h1>
-  <p class="lead" style="top:478px">Cambia la cifra, non il finale. Dopo <b>10 anni</b>:</p>
-  <div class="t9wrap"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-  <div class="t9">
-    <div class="h9"><div>Ogni mese</div><div>🎰 Scommetti<small>tieni tutte le vincite</small></div><div>📈 Investi<small>MSCI World 10,08%</small></div><div>🛡️ Prudente<small>6% e dopo le tasse</small></div></div>
+  <p class="lead">Cambia la cifra, non il finale. <b>Dopo 10 anni</b> 👇</p>
+  <div class="t9b">
+    <div class="h9b">
+      <div></div>
+      <div class="hb bet"><span>🎰</span>SCOMMETTI<small>tieni ogni vincita</small></div>
+      <div class="hb inv"><span>📈</span>INVESTI<small>MSCI World 10%</small></div>
+      <div class="hb pru"><span>🛡️</span>PRUDENTE<small>4%, dopo le tasse</small></div>
+    </div>
     {trs9}
-  </div></div>
-  <p class="note light" style="top:1060px">Anche nello scenario prudente (rendimento 6% annuo, al netto del 26% sulle plusvalenze) l'investitore resta avanti.
-  Rendimenti ipotetici, non garantiti.</p>
+  </div>
+  <p class="note light">Anche nello scenario prudente (4% annuo, al netto del 26% sulle plusvalenze) chi investe resta avanti. Rendimenti ipotetici, non garantiti.</p>
 """, "Ultima: tocca a te"))
 
 # 10 — CTA
