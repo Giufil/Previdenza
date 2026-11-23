@@ -326,7 +326,7 @@ S.append(slide(10, "cream", f"""
   <p class="lead dark" style="top:478px">La schedina del weekend non ti cambia la vita.<br><b>Un piano coerente con i tuoi obiettivi, sì.</b></p>
   <div class="cta-zone">
     <div class="cta-row">
-      <div class="cta"><span>💬</span><div>Scrivi <b>«PIANO»</b> nei commenti</div></div>
+      <div class="cta"><span>💬</span><div>Scrivi <b>«PIANO»</b> in chat</div></div>
       <div class="cta"><span>📤</span><div>Invialo a chi gioca ogni weekend</div></div>
       <div class="cta"><span>🔖</span><div>Salvalo per la prossima tentazione</div></div>
     </div>

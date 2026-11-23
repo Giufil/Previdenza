@@ -11,7 +11,7 @@ Ho messo a confronto Marco e Luca: stessa cifra, stessi 10 anni.
 La vera vincita è la differenza: +78.037 €.
 
 Conosci un Marco? Mandagli questo post. 📤
-Scrivi «PIANO» nei commenti se vuoi capire come costruirne uno coerente con i tuoi obiettivi. 💬
+Scrivi «PIANO» in chat se vuoi capire come costruirne uno coerente con i tuoi obiettivi. 💬
 
 Contenuto informativo: non è consulenza personalizzata né raccomandazione di investimento. Esempi illustrativi; i rendimenti passati non garantiscono quelli futuri.
 Fonti: ADM, Bilancio 2024; Istat 2024; MSCI World Index (EUR), factsheet 30/06/2025.
