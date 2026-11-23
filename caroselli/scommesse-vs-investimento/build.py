@@ -104,8 +104,8 @@ S = []
 # 1 — HOOK
 S.append(slide(1, "blue", f"""
   <div class="pill">SCOMMESSE VS BORSA · 10 ANNI</div>
-  <h1 class="t1" style="top:262px">LA SCHEDINA<br>TI STA COSTANDO<br><span class="gold" style="font-size:1.3em">78.000 €.</span></h1>
-  <p class="lead" style="top:600px">Stessi {num(MESE)} € al mese per 10 anni: <b>uno scommette, l'altro investe.</b><br>Alla fine uno ha <b class="gold">il doppio</b> dell'altro.</p>
+  <h1 class="t1" style="top:262px">LA SCHEDINA<br>TI STA COSTANDO<br><span class="gold" style="font-size:1.3em">CARO.</span></h1>
+  <p class="lead s1lead" style="top:600px">Due persone con <b>{num(MESE)} € al mese per 10 anni</b>: uno li scommette e uno li investe. Alla fine <b class="gold">uno ha il doppio dell'altro.</b></p>
   <div class="vs-wrap">
     <div class="vs-card">
       <img src="img/slot.jpg" style="object-position:50% 40%">
