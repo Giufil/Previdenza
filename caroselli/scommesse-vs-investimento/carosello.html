@@ -230,6 +230,92 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
 .content .vs-wrap{height:370px;margin-top:18px}
 .vs-amt{font-size:58px}
 .slide#s10 .content .help{margin-top:12px}
+
+/* ===== revisione 2 ===== */
+.t1{font-size:86px}
+.t-one{font-size:72px;white-space:nowrap;letter-spacing:-1.5px}
+.vs-lbl{bottom:24px;font-size:28px}
+.vs-lbl .emo{font-size:34px}
+
+/* s3: infografica più grande */
+.slide#s3 .content .lead{max-width:none}
+.slide#s3 .dots{grid-template-columns:repeat(10,40px);gap:9px;padding:26px}
+.slide#s3 .dots i{width:40px;height:40px}
+.slide#s3 .dots-leg{font-size:26px}
+.slide#s3 .dots-leg b{font-size:48px}
+.slide#s3 .dl-note,.slide#s3 .dl-note b{font-size:24px}
+
+/* s5: box chiaro, non si mimetizza */
+.slide#s5 .sc-box{background:var(--cream);color:var(--navy);border:none;box-shadow:0 20px 45px rgba(0,0,0,.28)}
+.slide#s5 .sc-tag{background:var(--navy);color:var(--gold)}
+.slide#s5 .hbar{background:#E7DCC2}
+.slide#s5 .fill.blue{background:linear-gradient(90deg,#24386E,#13234B);color:#fff}
+.slide#s5 .fill.gold2{background:linear-gradient(90deg,#F2CF7A,#D29B2E);color:#3A2706;height:100%;display:flex;align-items:center;justify-content:flex-end;padding-right:26px;font-weight:800;font-size:30px}
+.slide#s5 .sc-res .redt{color:var(--red)}
+.slide#s5 .glass{background:rgba(255,255,255,.12);color:#fff;border:2px solid rgba(235,193,99,.6);font-size:27px;line-height:1.42}
+.slide#s5 .glass .gold{color:var(--gold)}
+
+/* s6: risultato in evidenza */
+.result{display:flex;align-items:center;gap:22px;background:linear-gradient(120deg,#F7D27A,#D9A133 60%,#B37E1A);border-radius:28px;padding:18px 32px;box-shadow:0 18px 40px rgba(179,126,26,.35),inset 0 0 0 3px rgba(255,244,205,.7)}
+.result .eq{font-weight:900;font-size:70px;color:var(--navy);line-height:1}
+.result small{display:block;font-weight:700;font-size:20px;letter-spacing:2px;color:var(--navy);opacity:.85}
+.result b{display:block;font-weight:900;font-size:86px;line-height:1;color:var(--navy);letter-spacing:-2px}
+
+/* s7: differenza allineata alla differenza reale */
+.cols.v2{position:relative !important;display:block;margin-top:auto;flex:none}
+.cols.v2 .col{position:absolute;bottom:0;height:auto;width:240px}
+.cols.v2 .col:nth-child(1){left:0} .cols.v2 .col:nth-child(2){left:280px}
+.cols.v2 .cname{height:70px;margin-top:14px}
+.cbar.red img{opacity:.45;mix-blend-mode:multiply}
+.cbar span{text-shadow:0 4px 12px rgba(0,0,0,.35)}
+.gapline{position:absolute;left:280px;right:0;height:0;border-top:3px dashed rgba(235,193,99,.9);z-index:1}
+.diff.v2{position:absolute;left:560px;right:0;margin:0;display:flex;flex-direction:column;justify-content:center;padding:14px 24px;z-index:2;border-radius:20px}
+.diff.v2 .dval{font-size:50px;margin:2px 0 4px}
+.diff.v2 .dsub{font-size:21px;line-height:1.25}
+.taxnote{position:absolute;left:560px;right:0;font-size:20px;line-height:1.4;color:#E6ECFA}
+.taxnote b{color:var(--gold)}
+
+/* s9: tabella liquid glass */
+.t9wrap{position:relative;margin-top:4px}
+.blob{position:absolute;border-radius:50%;filter:blur(40px);opacity:.75;z-index:0}
+.blob.b1{width:340px;height:340px;left:-60px;top:40px;background:#F0596A}
+.blob.b2{width:380px;height:380px;left:300px;top:150px;background:#EBC163}
+.blob.b3{width:320px;height:320px;right:-60px;top:10px;background:#6FA8FF}
+.t9{position:relative;z-index:1;border-radius:34px;
+  background:linear-gradient(160deg,rgba(255,255,255,.32),rgba(255,255,255,.10) 45%,rgba(255,255,255,.18));
+  border:2px solid rgba(255,255,255,.55);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.8),inset 0 -2px 10px rgba(255,255,255,.15),0 30px 60px rgba(10,20,60,.35);
+  backdrop-filter:blur(26px) saturate(170%);-webkit-backdrop-filter:blur(26px) saturate(170%)}
+.h9>div{background:rgba(15,30,80,.35);font-size:24px;padding:20px 14px}
+.h9 small{font-size:17px}
+.r9{border-top:1.5px solid rgba(255,255,255,.3)}
+.r9>div{padding:20px 12px;font-size:34px;display:flex;align-items:center}
+.r9 .m{font-size:32px;text-shadow:0 2px 8px rgba(10,20,60,.4)}
+.r9 .v span{display:inline-block;padding:8px 14px;border-radius:18px;background:rgba(15,30,80,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.35);white-space:nowrap;font-size:31px}
+.r9 .red span{color:#FF9AA5} .r9 .gold span{color:#FFD679}
+.r9:last-child{background:rgba(255,255,255,.14)}
+
+/* s10 */
+.cta-zone{position:relative;height:470px;flex:none}
+.cta-zone .cta-row{position:absolute !important;left:0;top:10px;width:560px}
+.polaroid{position:absolute;right:-10px;top:0;width:330px;background:#fff;padding:14px 14px 18px;border-radius:12px;transform:rotate(4deg);box-shadow:0 24px 50px rgba(20,35,75,.3)}
+.polaroid .ph{height:250px;border-radius:6px;overflow:hidden}
+.polaroid .ph img{width:100%;height:100%;object-fit:cover}
+.poll{margin-top:14px;text-align:center}
+.pq{font-weight:900;font-size:26px;letter-spacing:1px;color:var(--navy);margin-bottom:10px}
+.po{font-weight:800;font-size:22px;padding:10px;border-radius:14px;margin-top:8px;color:#fff}
+.po.a{background:linear-gradient(90deg,#F0596A,#D42A3A)} .po.b{background:linear-gradient(90deg,#4B88E2,#2F59B5)}
+.disc{font-size:17px;margin-top:auto}
+.content .vs-wrap{height:344px}
+.slide#s6 .content{gap:18px}
+.result{padding:14px 30px} .result b{font-size:78px} .result .eq{font-size:62px}
+.slide#s6 .split>div:not(.plus){padding:10px 24px}
+.cta-zone{height:390px}
+.polaroid .ph{height:190px}
+.t9{position:relative;left:auto;right:auto;top:auto}
+.r9>div{padding:26px 12px}
+.slide#s2 .photo-strip{height:240px}
+.slide#s2 .strip-txt{font-size:27px}
 </style></head><body>
 
 <section class="slide blue" id="s1">
@@ -243,20 +329,18 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
   
   <div class="pill">SCOMMESSE VS BORSA · 10 ANNI</div>
   <div class="content">
-  <h1 class="t1">STESSI SOLDI.<br>STESSI 10 ANNI.<br><span class="gold">UNO HA IL DOPPIO.</span></h1>
-  <p class="lead">790 € al mese: <b>schedine, gratta e vinci e slot</b><br>contro <b>un investimento in Borsa</b>. Chi vince?</p>
+  <h1 class="t1">STESSI SOLDI<br>PER 10 ANNI.<br><span class="gold">UNO HA IL DOPPIO DELL'ALTRO.</span></h1>
+  <p class="lead">790 € al mese: <b>schedine, gratta e vinci e slot</b><br>contro <b>un investimento in Borsa</b>. Indovina chi vince.</p>
   <div class="vs-wrap">
     <div class="vs-card">
       <img src="img/slot.jpg" style="object-position:50% 40%">
       <div class="vs-shade red"></div>
       <div class="vs-lbl"><span class="emo">🎰</span>LO SCOMMETTITORE</div>
-      <div class="vs-amt blur">??.??? €</div>
     </div>
     <div class="vs-card">
       <img src="img/nyse.jpg" style="object-position:50% 50%">
       <div class="vs-shade blue"></div>
       <div class="vs-lbl"><span class="emo">📈</span>L'INVESTITORE</div>
-      <div class="vs-amt blur">???.??? €</div>
     </div>
     <div class="vs-badge">VS</div>
   </div>
@@ -276,7 +360,7 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
   
   <div class="pill">I NUMERI · ITALIA 2024</div>
   <div class="content">
-  <h1 class="t2">QUANTO GIOCA<br><span class="gold">UN ITALIANO?</span></h1>
+  <h1 class="t3">QUANTO GIOCA IN MEDIA<br><span class="gold">UN ITALIANO?</span></h1>
   <div class="photo-strip"><img src="img/sansiro.jpg" style="object-position:50% 62%">
     <div class="strip-txt">⚽ Ogni weekend, una schedina. Poi un gratta e vinci al bar. Poi una slot.</div></div>
   <div class="calc">
@@ -307,8 +391,8 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
   <div class="bgphoto"><img src="img/roulette.jpg"></div>
   <div class="pill">LA REGOLA DEL BANCO</div>
   <div class="content">
-  <h1 class="t2">IL BANCO<br><span class="gold">VINCE SEMPRE.</span></h1>
-  <p class="lead">Ogni <b>100 €</b> giocati, in media<br>te ne tornano <b class="gold">86</b>. Gli altri <b class="redt">14</b> restano al banco.</p>
+  <h1 class="t-one">IL BANCO <span class="gold">VINCE SEMPRE.</span></h1>
+  <p class="lead">Ogni <b>100 €</b> giocati, in media te ne tornano <b class="gold">86</b>. Gli altri <b class="redt">14</b> restano al banco.</p>
   <div class="dots-wrap">
     <div class="dots"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i></div>
     <div class="dots-leg">
@@ -374,7 +458,7 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
     <div class="row-lbl">Giocati in 10 anni</div>
     <div class="hbar"><div class="fill blue" style="width:100%">94.800 €</div></div>
     <div class="row-lbl">Vinti (86,3%)</div>
-    <div class="hbar"><div class="fill blue" style="width:86.3%">81.791 €</div><div class="fill red" style="width:13.7%"></div></div>
+    <div class="hbar"><div class="fill gold2" style="width:86.3%">81.791 €</div><div class="fill red" style="width:13.7%"></div></div>
     <div class="sc-res">Risultato: <b class="redt">−13.009 €</b></div>
   </div>
   <div class="glass"><span class="emo-l">🔁</span><div><b>Nella realtà è peggio.</b> Le vincite si rigiocano: lo scommettitore medio perde circa <b class="gold">108 € al mese</b>, quasi <b class="gold">13.000 €</b> in 10 anni. Patrimonio costruito: <b>zero</b>.</div></div>
@@ -397,23 +481,22 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
   <div class="pill">LUCA · 10 ANNI DOPO</div>
   <div class="content">
   <h1 class="t2">L'INVESTITORE<br><span class="gold">FA CRESCERE I SOLDI.</span></h1>
-  <div class="bigval">159.827 €</div>
   <div class="chart-box">
     <div class="legend"><span><i class="lg g"></i>Valore dell'investimento</span><span><i class="lg b"></i>Soldi versati</span><span class="yrs">anni →</span></div>
     
-<svg class="chart" viewBox="-70 -20 970 310" width="970" height="310">
+<svg class="chart" viewBox="-70 -20 970 285" width="970" height="285">
   <defs>
     <linearGradient id="gi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8BD5E" stop-opacity=".75"/><stop offset="1" stop-color="#E8BD5E" stop-opacity=".08"/></linearGradient>
     <linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A62B8" stop-opacity=".85"/><stop offset="1" stop-color="#3A62B8" stop-opacity=".35"/></linearGradient>
   </defs>
-  <line x1="0" x2="880" y1="176.5" y2="176.5" class="grid"/><text x="-12" y="182.5" class="ax" text-anchor="end">50k</text><line x1="0" x2="880" y1="102.9" y2="102.9" class="grid"/><text x="-12" y="108.9" class="ax" text-anchor="end">100k</text><line x1="0" x2="880" y1="29.4" y2="29.4" class="grid"/><text x="-12" y="35.4" class="ax" text-anchor="end">150k</text>
-  <path d="M0.0,250.0 L88.0,235.3 L176.0,219.1 L264.0,201.3 L352.0,181.7 L440.0,160.2 L528.0,136.4 L616.0,110.3 L704.0,81.5 L792.0,49.8 L880.0,15.0 L880,250 L0,250 Z" fill="url(#gi)"/>
-  <path d="M0.0,250.0 L88.0,236.1 L176.0,222.1 L264.0,208.2 L352.0,194.2 L440.0,180.3 L528.0,166.4 L616.0,152.4 L704.0,138.5 L792.0,124.5 L880.0,110.6 L880,250 L0,250 Z" fill="url(#gv)"/>
-  <path d="M0.0,250.0 L88.0,235.3 L176.0,219.1 L264.0,201.3 L352.0,181.7 L440.0,160.2 L528.0,136.4 L616.0,110.3 L704.0,81.5 L792.0,49.8 L880.0,15.0" fill="none" stroke="#B8801C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M0.0,250.0 L88.0,236.1 L176.0,222.1 L264.0,208.2 L352.0,194.2 L440.0,180.3 L528.0,166.4 L616.0,152.4 L704.0,138.5 L792.0,124.5 L880.0,110.6" fill="none" stroke="#14254F" stroke-width="3" stroke-dasharray="8 8"/>
-  <circle cx="880" cy="15.0" r="13" fill="#fff" stroke="#B8801C" stroke-width="6"/>
-  <text x="88.0" y="284" class="ax" text-anchor="middle">1</text><text x="176.0" y="284" class="ax" text-anchor="middle">2</text><text x="264.0" y="284" class="ax" text-anchor="middle">3</text><text x="352.0" y="284" class="ax" text-anchor="middle">4</text><text x="440.0" y="284" class="ax" text-anchor="middle">5</text><text x="528.0" y="284" class="ax" text-anchor="middle">6</text><text x="616.0" y="284" class="ax" text-anchor="middle">7</text><text x="704.0" y="284" class="ax" text-anchor="middle">8</text><text x="792.0" y="284" class="ax" text-anchor="middle">9</text><text x="880.0" y="284" class="ax" text-anchor="middle">10</text>
-  <text x="440.0" y="310" class="ax" text-anchor="middle" opacity="0"> </text>
+  <line x1="0" x2="880" y1="158.8" y2="158.8" class="grid"/><text x="-12" y="164.8" class="ax" text-anchor="end">50k</text><line x1="0" x2="880" y1="92.6" y2="92.6" class="grid"/><text x="-12" y="98.6" class="ax" text-anchor="end">100k</text><line x1="0" x2="880" y1="26.5" y2="26.5" class="grid"/><text x="-12" y="32.5" class="ax" text-anchor="end">150k</text>
+  <path d="M0.0,225.0 L88.0,211.8 L176.0,197.2 L264.0,181.2 L352.0,163.6 L440.0,144.1 L528.0,122.8 L616.0,99.3 L704.0,73.4 L792.0,44.8 L880.0,13.5 L880,225 L0,225 Z" fill="url(#gi)"/>
+  <path d="M0.0,225.0 L88.0,212.5 L176.0,199.9 L264.0,187.4 L352.0,174.8 L440.0,162.3 L528.0,149.7 L616.0,137.2 L704.0,124.6 L792.0,112.1 L880.0,99.5 L880,225 L0,225 Z" fill="url(#gv)"/>
+  <path d="M0.0,225.0 L88.0,211.8 L176.0,197.2 L264.0,181.2 L352.0,163.6 L440.0,144.1 L528.0,122.8 L616.0,99.3 L704.0,73.4 L792.0,44.8 L880.0,13.5" fill="none" stroke="#B8801C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M0.0,225.0 L88.0,212.5 L176.0,199.9 L264.0,187.4 L352.0,174.8 L440.0,162.3 L528.0,149.7 L616.0,137.2 L704.0,124.6 L792.0,112.1 L880.0,99.5" fill="none" stroke="#14254F" stroke-width="3" stroke-dasharray="8 8"/>
+  <circle cx="880" cy="13.5" r="13" fill="#fff" stroke="#B8801C" stroke-width="6"/>
+  <text x="88.0" y="259" class="ax" text-anchor="middle">1</text><text x="176.0" y="259" class="ax" text-anchor="middle">2</text><text x="264.0" y="259" class="ax" text-anchor="middle">3</text><text x="352.0" y="259" class="ax" text-anchor="middle">4</text><text x="440.0" y="259" class="ax" text-anchor="middle">5</text><text x="528.0" y="259" class="ax" text-anchor="middle">6</text><text x="616.0" y="259" class="ax" text-anchor="middle">7</text><text x="704.0" y="259" class="ax" text-anchor="middle">8</text><text x="792.0" y="259" class="ax" text-anchor="middle">9</text><text x="880.0" y="259" class="ax" text-anchor="middle">10</text>
+  <text x="440.0" y="285" class="ax" text-anchor="middle" opacity="0"> </text>
 </svg>
   </div>
   <div class="split">
@@ -421,6 +504,7 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
     <div class="plus">+</div>
     <div><small>Interesse composto</small><b class="goldt">65.027 €</b></div>
   </div>
+  <div class="result"><div class="eq">=</div><div><small>PATRIMONIO DI LUCA DOPO 10 ANNI</small><b>159.827 €</b></div></div>
   <p class="note">Ipotesi: 10,08% annuo, rendimento netto annualizzato a 10 anni dell'indice MSCI World in euro (MSCI, 30/06/2025). Lordo di tasse e costi.</p>
 </div>
   <div class="gline" style="top:1240px"></div>
@@ -440,23 +524,25 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
   <div class="pill">IL VERDETTO</div>
   <div class="content">
   <h1 class="t2">LA VERA VINCITA<br><span class="gold">È QUESTA.</span></h1>
-  <div class="cols">
+  <div class="cols v2" style="height:630px">
     <div class="col">
       <div class="cval">81.791 €</div>
-      <div class="cbar red" style="height:241px"><span>🎰</span></div>
+      <div class="cbar red" style="height:246px"><img src="img/slot.jpg" style="object-position:35% 50%"><span>🎰</span></div>
       <div class="cname">MARCO<br><small>scommettitore</small></div>
     </div>
     <div class="col">
       <div class="cval gold">159.827 €</div>
-      <div class="cbar gold" style="height:470px"><img src="img/euro.jpg"><span>📈</span></div>
+      <div class="cbar gold" style="height:480px"><img src="img/euro.jpg"><span>📈</span></div>
       <div class="cname">LUCA<br><small>investitore</small></div>
     </div>
-    <div class="diff">
+    <div class="gapline" style="bottom:564px"></div>
+    <div class="gapline" style="bottom:330px;left:0"></div>
+    <div class="diff v2" style="bottom:330px;height:234px">
       <div class="dlab">DIFFERENZA</div>
       <div class="dval">+78.037 €</div>
-      <div class="dsub">Quasi il <b>doppio</b>, partendo dagli stessi soldi.</div>
-      <div class="dsub2">E anche dopo il 26% di tasse, Luca ha <b>142.920 €</b>.</div>
+      <div class="dsub">Quasi il <b>doppio</b>, con gli stessi soldi.</div>
     </div>
+    <div class="taxnote" style="right:0;top:318px">E anche dopo il 26% di tasse sulle plusvalenze, Luca avrebbe <b>142.920 €</b>.</div>
   </div>
 </div>
   <div class="gline" style="top:1240px"></div>
@@ -498,12 +584,13 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
   
   <div class="pill">DA SALVARE 🔖</div>
   <div class="content">
-  <h1 class="t2">E SE GIOCHI<br><span class="gold">MENO?</span></h1>
+  <h1 class="t-one">E SE GIOCHI <span class="gold">MENO?</span></h1>
   <p class="lead">Cambia la cifra, non il finale. Dopo <b>10 anni</b>:</p>
+  <div class="t9wrap"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
   <div class="t9">
     <div class="h9"><div>Ogni mese</div><div>🎰 Scommetti<small>tieni tutte le vincite</small></div><div>📈 Investi<small>MSCI World 10,08%</small></div><div>🛡️ Prudente<small>6% e dopo le tasse</small></div></div>
-    <div class="r9"><div class="m">50 €<small>/mese</small></div><div class="v red">5.177 €</div><div class="v gold">10.116 €</div><div class="v">7.601 €</div></div><div class="r9"><div class="m">100 €<small>/mese</small></div><div class="v red">10.353 €</div><div class="v gold">20.231 €</div><div class="v">15.202 €</div></div><div class="r9"><div class="m">300 €<small>/mese</small></div><div class="v red">31.060 €</div><div class="v gold">60.694 €</div><div class="v">45.605 €</div></div><div class="r9"><div class="m">790 €<small>/mese</small></div><div class="v red">81.791 €</div><div class="v gold">159.827 €</div><div class="v">120.092 €</div></div>
-  </div>
+    <div class="r9"><div class="m">50 €<small>/mese</small></div><div class="v red"><span>5.177 €</span></div><div class="v gold"><span>10.116 €</span></div><div class="v"><span>7.601 €</span></div></div><div class="r9"><div class="m">100 €<small>/mese</small></div><div class="v red"><span>10.353 €</span></div><div class="v gold"><span>20.231 €</span></div><div class="v"><span>15.202 €</span></div></div><div class="r9"><div class="m">300 €<small>/mese</small></div><div class="v red"><span>31.060 €</span></div><div class="v gold"><span>60.694 €</span></div><div class="v"><span>45.605 €</span></div></div><div class="r9"><div class="m">790 €<small>/mese</small></div><div class="v red"><span>81.791 €</span></div><div class="v gold"><span>159.827 €</span></div><div class="v"><span>120.092 €</span></div></div>
+  </div></div>
   <p class="note light">Anche nello scenario prudente (rendimento 6% annuo, al netto del 26% sulle plusvalenze) l'investitore resta avanti.
   Rendimenti ipotetici, non garantiti.</p>
 </div>
@@ -522,16 +609,21 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
   </div>
   
   <div class="pill">E ORA TOCCA A TE</div>
-  <div class="coin big" style="left:760px;top:600px"><span>€</span></div>
   <div class="content">
   <h1 class="t3">CONOSCI UN MARCO?<br><span class="gold">MANDAGLI QUESTO POST.</span></h1>
   <p class="lead dark">La schedina del weekend non ti cambia la vita.<br><b>Un piano coerente con i tuoi obiettivi, sì.</b></p>
-  <div class="cta-row">
-    <div class="cta"><span>💬</span><div>Scrivi <b>«PIANO»</b> nei commenti</div></div>
-    <div class="cta"><span>📤</span>Invialo a chi gioca ogni weekend</div>
-    <div class="cta"><span>🔖</span>Salvalo per la prossima tentazione</div>
+  <div class="cta-zone">
+    <div class="cta-row">
+      <div class="cta"><span>💬</span><div>Scrivi <b>«PIANO»</b> nei commenti</div></div>
+      <div class="cta"><span>📤</span><div>Invialo a chi gioca ogni weekend</div></div>
+      <div class="cta"><span>🔖</span><div>Salvalo per la prossima tentazione</div></div>
+    </div>
+    <div class="polaroid">
+      <div class="ph"><img src="img/euro.jpg"></div>
+      <div class="poll"><div class="pq">TU CHI SEI?</div>
+        <div class="po a">🎰 MARCO</div><div class="po b">📈 LUCA</div></div>
+    </div>
   </div>
-  <div class="help">📞 Gioco d'azzardo problematico? <b>Telefono Verde Nazionale (ISS) 800 558 822</b>, gratuito e anonimo.</div>
   <p class="disc">Contenuto informativo: non è consulenza personalizzata né raccomandazione di investimento. Esempi illustrativi; i rendimenti passati non garantiscono quelli futuri. Investire in azioni comporta il rischio di perdite.
   <br>Fonti: ADM, Bilancio 2024; Istat, 2024; MSCI World Index (EUR) factsheet 30/06/2025. Foto: Wikimedia Commons, A. Taveneaux (CC BY-SA 3.0), R. Lawler (PD), T. Lozano (CC BY 2.0), LoreenU (CC BY-SA 4.0), PD.</p>
 </div>

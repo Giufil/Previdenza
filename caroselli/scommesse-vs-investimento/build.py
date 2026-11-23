@@ -104,20 +104,18 @@ S = []
 # 1 — HOOK
 S.append(slide(1, "blue", f"""
   <div class="pill">SCOMMESSE VS BORSA · 10 ANNI</div>
-  <h1 class="t1" style="top:262px">STESSI SOLDI.<br>STESSI 10 ANNI.<br><span class="gold">UNO HA IL DOPPIO.</span></h1>
-  <p class="lead" style="top:600px">{num(MESE)} € al mese: <b>schedine, gratta e vinci e slot</b><br>contro <b>un investimento in Borsa</b>. Chi vince?</p>
+  <h1 class="t1" style="top:262px">STESSI SOLDI<br>PER 10 ANNI.<br><span class="gold">UNO HA IL DOPPIO DELL'ALTRO.</span></h1>
+  <p class="lead" style="top:600px">{num(MESE)} € al mese: <b>schedine, gratta e vinci e slot</b><br>contro <b>un investimento in Borsa</b>. Indovina chi vince.</p>
   <div class="vs-wrap">
     <div class="vs-card">
       <img src="img/slot.jpg" style="object-position:50% 40%">
       <div class="vs-shade red"></div>
       <div class="vs-lbl"><span class="emo">🎰</span>LO SCOMMETTITORE</div>
-      <div class="vs-amt blur">??.??? €</div>
     </div>
     <div class="vs-card">
       <img src="img/nyse.jpg" style="object-position:50% 50%">
       <div class="vs-shade blue"></div>
       <div class="vs-lbl"><span class="emo">📈</span>L'INVESTITORE</div>
-      <div class="vs-amt blur">???.??? €</div>
     </div>
     <div class="vs-badge">VS</div>
   </div>
@@ -126,7 +124,7 @@ S.append(slide(1, "blue", f"""
 # 2 — I NUMERI
 S.append(slide(2, "cream", f"""
   <div class="pill">I NUMERI · ITALIA 2024</div>
-  <h1 class="t2" style="top:262px">QUANTO GIOCA<br><span class="gold">UN ITALIANO?</span></h1>
+  <h1 class="t3" style="top:262px">QUANTO GIOCA IN MEDIA<br><span class="gold">UN ITALIANO?</span></h1>
   <div class="photo-strip" style="top:470px"><img src="img/sansiro.jpg" style="object-position:50% 62%">
     <div class="strip-txt">⚽ Ogni weekend, una schedina. Poi un gratta e vinci al bar. Poi una slot.</div></div>
   <div class="calc" style="top:680px">
@@ -146,8 +144,8 @@ dots = "".join(f'<i class="{"lost" if i >= 86 else ""}"></i>' for i in range(100
 S.append(slide(3, "blue", f"""
   <div class="bgphoto"><img src="img/roulette.jpg"></div>
   <div class="pill">LA REGOLA DEL BANCO</div>
-  <h1 class="t2" style="top:262px">IL BANCO<br><span class="gold">VINCE SEMPRE.</span></h1>
-  <p class="lead" style="top:480px">Ogni <b>100 €</b> giocati, in media<br>te ne tornano <b class="gold">86</b>. Gli altri <b class="redt">14</b> restano al banco.</p>
+  <h1 class="t-one" style="top:262px">IL BANCO <span class="gold">VINCE SEMPRE.</span></h1>
+  <p class="lead" style="top:480px">Ogni <b>100 €</b> giocati, in media te ne tornano <b class="gold">86</b>. Gli altri <b class="redt">14</b> restano al banco.</p>
   <div class="dots-wrap" style="top:625px">
     <div class="dots">{dots}</div>
     <div class="dots-leg">
@@ -190,7 +188,7 @@ S.append(slide(5, "blue", f"""
     <div class="row-lbl">Giocati in 10 anni</div>
     <div class="hbar"><div class="fill blue" style="width:100%">{eur(VERSATO)}</div></div>
     <div class="row-lbl">Vinti (86,3%)</div>
-    <div class="hbar"><div class="fill blue" style="width:{pct_g:.1f}%">{eur(GAMB_END)}</div><div class="fill red" style="width:{100-pct_g:.1f}%"></div></div>
+    <div class="hbar"><div class="fill gold2" style="width:{pct_g:.1f}%">{eur(GAMB_END)}</div><div class="fill red" style="width:{100-pct_g:.1f}%"></div></div>
     <div class="sc-res">Risultato: <b class="redt">−{eur(VERSATO-GAMB_END)}</b></div>
   </div>
   <div class="glass" style="top:900px"><span class="emo-l">🔁</span><div><b>Nella realtà è peggio.</b> Le vincite si rigiocano: lo scommettitore medio perde circa <b class="gold">{num(PERDITA_MESE)} € al mese</b>, quasi <b class="gold">13.000 €</b> in 10 anni. Patrimonio costruito: <b>zero</b>.</div></div>
@@ -198,7 +196,7 @@ S.append(slide(5, "blue", f"""
 """, "Scorri: e Luca?"))
 
 # 6 — LUCA 10 ANNI DOPO (grafico)
-W, H = 880, 250
+W, H = 880, 225
 x0, y0 = 0, H
 ymax = 170000
 pts_v = [(0, 0)] + [((k) / 10 * W, MESE * 12 * k) for k in range(1, 11)]
@@ -233,7 +231,6 @@ chart = f"""
 S.append(slide(6, "cream", f"""
   <div class="pill">LUCA · 10 ANNI DOPO</div>
   <h1 class="t2" style="top:262px">L'INVESTITORE<br><span class="gold">FA CRESCERE I SOLDI.</span></h1>
-  <div class="bigval" style="top:470px">{eur(INV_END)}</div>
   <div class="chart-box" style="top:590px">
     <div class="legend"><span><i class="lg g"></i>Valore dell'investimento</span><span><i class="lg b"></i>Soldi versati</span><span class="yrs">anni →</span></div>
     {chart}
@@ -243,31 +240,36 @@ S.append(slide(6, "cream", f"""
     <div class="plus">+</div>
     <div><small>Interesse composto</small><b class="goldt">{eur(INV_END-VERSATO)}</b></div>
   </div>
+  <div class="result"><div class="eq">=</div><div><small>PATRIMONIO DI LUCA DOPO 10 ANNI</small><b>{eur(INV_END)}</b></div></div>
   <p class="note" style="top:1108px">Ipotesi: 10,08% annuo, rendimento netto annualizzato a 10 anni dell'indice MSCI World in euro (MSCI, 30/06/2025). Lordo di tasse e costi.</p>
 """, "Scorri: il verdetto"))
 
 # 7 — VERDETTO
-hg = GAMB_END / INV_END * 470
+BH, NB = 480, 84          # altezza barra Luca, altezza etichette sotto le barre
+hg = GAMB_END / INV_END * BH
+gap = BH - hg
 S.append(slide(7, "blue", f"""
   <div class="pill">IL VERDETTO</div>
   <h1 class="t2" style="top:262px">LA VERA VINCITA<br><span class="gold">È QUESTA.</span></h1>
-  <div class="cols" style="top:475px">
+  <div class="cols v2" style="height:{BH+NB+66}px">
     <div class="col">
       <div class="cval">{eur(GAMB_END)}</div>
-      <div class="cbar red" style="height:{hg:.0f}px"><span>🎰</span></div>
+      <div class="cbar red" style="height:{hg:.0f}px"><img src="img/slot.jpg" style="object-position:35% 50%"><span>🎰</span></div>
       <div class="cname">MARCO<br><small>scommettitore</small></div>
     </div>
     <div class="col">
       <div class="cval gold">{eur(INV_END)}</div>
-      <div class="cbar gold" style="height:470px"><img src="img/euro.jpg"><span>📈</span></div>
+      <div class="cbar gold" style="height:{BH}px"><img src="img/euro.jpg"><span>📈</span></div>
       <div class="cname">LUCA<br><small>investitore</small></div>
     </div>
-    <div class="diff">
+    <div class="gapline" style="bottom:{NB+BH}px"></div>
+    <div class="gapline" style="bottom:{NB+hg:.0f}px;left:0"></div>
+    <div class="diff v2" style="bottom:{NB+hg:.0f}px;height:{gap:.0f}px">
       <div class="dlab">DIFFERENZA</div>
       <div class="dval">+{eur(DIFF)}</div>
-      <div class="dsub">Quasi il <b>doppio</b>, partendo dagli stessi soldi.</div>
-      <div class="dsub2">E anche dopo il 26% di tasse, Luca ha <b>{eur(INV_NET)}</b>.</div>
+      <div class="dsub">Quasi il <b>doppio</b>, con gli stessi soldi.</div>
     </div>
+    <div class="taxnote" style="right:0;top:{66+gap+18:.0f}px">E anche dopo il 26% di tasse sulle plusvalenze, Luca avrebbe <b>{eur(INV_NET)}</b>.</div>
   </div>
 """, "Scorri: «giocare in Borsa»?"))
 
@@ -293,15 +295,16 @@ S.append(slide(8, "cream", f"""
 trs9 = ""
 for m in (50, 100, 300, MESE):
     s = scen(m)
-    trs9 += f'<div class="r9"><div class="m">{num(m)} €<small>/mese</small></div><div class="v red">{eur(s["g"])}</div><div class="v gold">{eur(s["a"])}</div><div class="v">{eur(s["pn"])}</div></div>'
+    trs9 += f'<div class="r9"><div class="m">{num(m)} €<small>/mese</small></div><div class="v red"><span>{eur(s["g"])}</span></div><div class="v gold"><span>{eur(s["a"])}</span></div><div class="v"><span>{eur(s["pn"])}</span></div></div>'
 S.append(slide(9, "blue", f"""
   <div class="pill">DA SALVARE 🔖</div>
-  <h1 class="t2" style="top:262px">E SE GIOCHI<br><span class="gold">MENO?</span></h1>
+  <h1 class="t-one" style="top:262px">E SE GIOCHI <span class="gold">MENO?</span></h1>
   <p class="lead" style="top:478px">Cambia la cifra, non il finale. Dopo <b>10 anni</b>:</p>
-  <div class="t9" style="top:560px">
+  <div class="t9wrap"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="t9">
     <div class="h9"><div>Ogni mese</div><div>🎰 Scommetti<small>tieni tutte le vincite</small></div><div>📈 Investi<small>MSCI World 10,08%</small></div><div>🛡️ Prudente<small>6% e dopo le tasse</small></div></div>
     {trs9}
-  </div>
+  </div></div>
   <p class="note light" style="top:1060px">Anche nello scenario prudente (rendimento 6% annuo, al netto del 26% sulle plusvalenze) l'investitore resta avanti.
   Rendimenti ipotetici, non garantiti.</p>
 """, "Ultima: tocca a te"))
@@ -311,13 +314,18 @@ S.append(slide(10, "cream", f"""
   <div class="pill">E ORA TOCCA A TE</div>
   <h1 class="t3" style="top:262px">CONOSCI UN MARCO?<br><span class="gold">MANDAGLI QUESTO POST.</span></h1>
   <p class="lead dark" style="top:478px">La schedina del weekend non ti cambia la vita.<br><b>Un piano coerente con i tuoi obiettivi, sì.</b></p>
-  <div class="cta-row" style="top:600px">
-    <div class="cta"><span>💬</span><div>Scrivi <b>«PIANO»</b> nei commenti</div></div>
-    <div class="cta"><span>📤</span>Invialo a chi gioca ogni weekend</div>
-    <div class="cta"><span>🔖</span>Salvalo per la prossima tentazione</div>
+  <div class="cta-zone">
+    <div class="cta-row">
+      <div class="cta"><span>💬</span><div>Scrivi <b>«PIANO»</b> nei commenti</div></div>
+      <div class="cta"><span>📤</span><div>Invialo a chi gioca ogni weekend</div></div>
+      <div class="cta"><span>🔖</span><div>Salvalo per la prossima tentazione</div></div>
+    </div>
+    <div class="polaroid">
+      <div class="ph"><img src="img/euro.jpg"></div>
+      <div class="poll"><div class="pq">TU CHI SEI?</div>
+        <div class="po a">🎰 MARCO</div><div class="po b">📈 LUCA</div></div>
+    </div>
   </div>
-  <div class="coin big" style="left:760px;top:600px"><span>€</span></div>
-  <div class="help" style="top:880px">📞 Gioco d'azzardo problematico? <b>Telefono Verde Nazionale (ISS) 800 558 822</b>, gratuito e anonimo.</div>
   <p class="disc" style="top:975px">Contenuto informativo: non è consulenza personalizzata né raccomandazione di investimento. Esempi illustrativi; i rendimenti passati non garantiscono quelli futuri. Investire in azioni comporta il rischio di perdite.
   <br>Fonti: ADM, Bilancio 2024; Istat, 2024; MSCI World Index (EUR) factsheet 30/06/2025. Foto: Wikimedia Commons, A. Taveneaux (CC BY-SA 3.0), R. Lawler (PD), T. Lozano (CC BY 2.0), LoreenU (CC BY-SA 4.0), PD.</p>
 """, "", right=False))

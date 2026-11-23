@@ -13,8 +13,6 @@ La vera vincita è la differenza: +78.037 €.
 Conosci un Marco? Mandagli questo post. 📤
 Scrivi «PIANO» nei commenti se vuoi capire come costruirne uno coerente con i tuoi obiettivi. 💬
 
-📞 Gioco d'azzardo problematico? Telefono Verde Nazionale (ISS) 800 558 822, gratuito e anonimo.
-
 Contenuto informativo: non è consulenza personalizzata né raccomandazione di investimento. Esempi illustrativi; i rendimenti passati non garantiscono quelli futuri.
 Fonti: ADM, Bilancio 2024; Istat 2024; MSCI World Index (EUR), factsheet 30/06/2025.
 Foto: Wikimedia Commons, A. Taveneaux (CC BY-SA 3.0), R. Lawler (PD), T. Lozano (CC BY 2.0), LoreenU (CC BY-SA 4.0).
