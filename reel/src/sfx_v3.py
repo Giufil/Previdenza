@@ -115,7 +115,6 @@ for k in range(5):
     add(sfx, kick(), s + 0.12, 0.45)
     add(sfx, ding(1100 + 110 * k), s + 0.14, 0.7)
 add(sfx, impact(), 10.8, 1.0)
-add(sfx, ding(1760), 11.3, 0.9)
 sfx = reverb(sfx, 1.2, 0.18)
 x = np.tanh(sfx / np.max(np.abs(sfx)) * 1.2) / np.tanh(1.2) * 0.89
 with wave.open("sfx_v3.wav", "wb") as w:

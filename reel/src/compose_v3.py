@@ -175,7 +175,7 @@ def header(frame, t):
     op = clamp(a * 3)
     dy = -(1 - eback(a, 1.3)) * 260
     swap = lin(t, OUT_T, OUT_T + 0.25)
-    liquid_glass(frame, (60, 200 + dy, 1020, 500 + dy), op=op)
+    liquid_glass(frame, (60, 200 + dy, 1020, 475 + dy), op=op)
     lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
     o1 = op * (1 - swap)
     if o1 > 0:
@@ -185,16 +185,8 @@ def header(frame, t):
     if swap > 0:
         o2 = op * swap
         yo = (1 - eout(swap)) * 30
-        text(d, (540, 232 + yo), "Dopo ogni crollo,", font("InterDisplay-Black", 64), WHITE, o2, anchor="ma")
-        text(d, (540, 306 + yo), "è arrivato il rimbalzo.", font("InterDisplay-Black", 64), GREEN, o2, anchor="ma")
-        c = lin(t, OUT_T + 0.5, OUT_T + 0.75)
-        if c > 0:
-            pul = 1 + 0.025 * math.sin(t * 8) * clamp((t - OUT_T - 0.9) * 3)
-            w2, h2 = 700 * eback(c, 1.4) * pul, 76 * pul
-            d.rounded_rectangle([540 - w2 / 2, 398, 540 + w2 / 2, 398 + h2], int(h2 / 2), fill=GOLD + (int(255 * clamp(c * 3)),))
-            if c > 0.5:
-                d.text((540, 398 + h2 / 2), "Salvalo per il prossimo crollo", font=font("InterDisplay-Black", 36 * pul), fill=(18, 18, 18, int(255 * clamp(c * 2 - 1) * 2 if c < 1 else 255)), anchor="mm")
-    text(d, (540, 470 + dy), "S&P 500 · prezzi di chiusura · rimbalzo = 12 mesi dal minimo · non è consulenza", font("Inter-Medium", 19), (215, 220, 232), op * lin(t, 0.8, 1.0), anchor="ma", shadow_=False)
+        text(d, (540, 262 + yo), "Dopo ogni crollo,", font("InterDisplay-Black", 64), WHITE, o2, anchor="ma")
+        text(d, (540, 340 + yo), "è arrivato il rimbalzo.", font("InterDisplay-Black", 64), GREEN, o2, anchor="ma")
     overlay(frame, lay)
 
 def row(frame, t, k):
@@ -246,7 +238,17 @@ def render_frame(src, i):
     header(frame, t)
     for k in range(len(ROWS)):
         row(frame, t, k)
+    footnote(frame, t)
     return frame
+
+def footnote(frame, t):
+    a = lin(t, 0.8, 1.1)
+    if a <= 0: return
+    y = RY0 + len(ROWS) * (RH + RG) + 4
+    liquid_glass(frame, (RX0, y, RX1, y + 50), r=25, op=a, tint_a=150)
+    lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+    text(d, ((RX0 + RX1) / 2, y + 25), "Fonte: S&P 500, prezzi di chiusura · rimbalzo = 12 mesi dal minimo · non è consulenza", font("Inter-Medium", 19), (230, 234, 242), a, anchor="mm", shadow_=False)
+    overlay(frame, lay)
 def main():
     dec = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-i", BG, "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
     enc = None
