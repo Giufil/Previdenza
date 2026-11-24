@@ -172,8 +172,10 @@ def bg_transform(img, t):
 
 def header(frame, t):
     a = lin(t, 0.0, 0.25)
-    op = clamp(a * 3)
-    dy = -(1 - eback(a, 1.3)) * 260
+    hx = lin(t, FOLLOW_T, FOLLOW_T + 0.2)
+    if hx >= 1: return
+    op = clamp(a * 3) * (1 - hx)
+    dy = -(1 - eback(a, 1.3)) * 260 - eout(hx) * 120
     swap = lin(t, OUT_T, OUT_T + 0.25)
     liquid_glass(frame, (60, 200 + dy, 1020, 475 + dy), op=op)
     lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
@@ -239,7 +241,89 @@ def render_frame(src, i):
     for k in range(len(ROWS)):
         row(frame, t, k)
     footnote(frame, t)
+    follow_scene(frame, t)
     return frame
+
+FOLLOW_T = 12.0
+PROFILE = Image.open(sys.argv[4] if len(sys.argv) > 4 else "../up/profile.jpg").convert("RGB")
+BTN = (616, 45, 1039, 138)
+def profile_card(followed, press):
+    im = PROFILE.copy()
+    if followed or press > 0:
+        d = ImageDraw.Draw(im)
+        x0, y0, x1, y1 = BTN
+        # repaint button area with card background, then draw button (pressed = slightly smaller)
+        d.rectangle([x0 - 3, y0 - 3, x1 + 3, y1 + 3], fill=(12, 15, 20))
+        sh = 6 * press
+        box = [x0 + sh, y0 + sh * 0.5, x1 - sh, y1 - sh * 0.5]
+        if followed:
+            d.rounded_rectangle(box, 24, fill=(50, 54, 64))
+            d.text(((x0 + x1) / 2, (y0 + y1) / 2 + 1), "Segui già", font=font("Inter-SemiBold", 40), fill=(255, 255, 255), anchor="mm")
+        else:
+            d.rounded_rectangle(box, 24, fill=(74, 93, 247))
+            d.text(((x0 + x1) / 2, (y0 + y1) / 2 + 1), "Segui", font=font("Inter-SemiBold", 40), fill=(255, 255, 255), anchor="mm")
+    return im
+
+def cursor_img(sc=1.0):
+    S = 4
+    pts = [(0, 0), (0, 52), (13, 40), (22, 61), (31, 57), (22, 37), (39, 37)]
+    w, h = int(60 * S), int(80 * S)
+    im = Image.new("RGBA", (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    P = [(6 * S + x * S * sc, 6 * S + y * S * sc) for x, y in pts]
+    d.polygon(P, fill=(255, 255, 255, 255), outline=(10, 10, 10, 255), width=int(3 * S))
+    im = im.resize((60, 80), Image.LANCZOS)
+    shadow_ = im.getchannel("A").filter(ImageFilter.GaussianBlur(4)).point(lambda v: int(v * 0.5))
+    out = Image.new("RGBA", (70, 92), (0, 0, 0, 0))
+    out.paste(Image.new("RGBA", (60, 80), (0, 0, 0, 255)), (4, 7), shadow_)
+    out.alpha_composite(im, (0, 0))
+    return out
+
+def follow_scene(frame, t):
+    lt = t - FOLLOW_T
+    if lt < 0.1: return
+    a = lin(lt, 0.1, 0.4)
+    cw = 960; sc = cw / PROFILE.width; ch = int(PROFILE.height * sc)
+    x0 = (W - cw) // 2; y0 = 260
+    click = FOLLOW_T + 1.35
+    followed = t >= click + 0.08
+    press = math.sin(math.pi * lin(t, click, click + 0.16)) if click <= t < click + 0.16 else 0
+    card = profile_card(followed, press).resize((cw, ch), Image.LANCZOS)
+    k = eback(a, 1.5); op = clamp(a * 3)
+    w2, h2 = max(2, int(cw * (0.8 + 0.2 * k))), max(2, int(ch * (0.8 + 0.2 * k)))
+    card = card.resize((w2, h2), Image.BILINEAR)
+    cx0 = x0 + (cw - w2) // 2; cy0 = y0 + (ch - h2) // 2
+    sm, pad = shadow(w2, h2, 34, blur=26, a=150)
+    frame.paste(Image.new("RGB", sm.size, (0, 0, 0)), (cx0 - pad, cy0 - pad), sm.point(lambda v: int(v * op)))
+    frame.paste(card, (cx0, cy0), rr_mask(w2, h2, 34).point(lambda v: int(v * op)))
+    ov = Image.new("RGBA", (w2, h2), (0, 0, 0, 0))
+    ImageDraw.Draw(ov).rounded_rectangle([0, 0, w2 - 1, h2 - 1], 34, outline=(255, 255, 255, int(60 * op)), width=2)
+    frame.paste(ov, (cx0, cy0), ov)
+    # button centre in frame coords
+    bx = x0 + (BTN[0] + BTN[2]) / 2 * sc + 40
+    by = y0 + (BTN[1] + BTN[3]) / 2 * sc + 10
+    # ripple
+    if click <= t < click + 0.45:
+        r = lin(t, click, click + 0.45)
+        lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+        R = 20 + 70 * eout(r)
+        d.ellipse([bx - 40 - R, by - 10 - R, bx - 40 + R, by - 10 + R], outline=(255, 255, 255, int(200 * (1 - r))), width=5)
+        overlay(frame, lay)
+    # cursor: enters from lower right, glides to the button, clicks, then rests
+    m = lin(lt, 0.55, 1.3)
+    if m > 0:
+        sx, sy = 980, 820
+        e = einout(m)
+        px = sx + (bx - sx) * e + math.sin(e * math.pi) * -40
+        py = sy + (by - sy) * e
+        if t > click + 0.3:
+            r2 = eout(lin(t, click + 0.3, click + 0.8))
+            px += 60 * r2; py += 40 * r2
+        csc = 0.85 if click <= t < click + 0.14 else 1.0
+        cur = cursor_img(csc)
+        cop = clamp(m * 4)
+        if cop < 1:
+            al = cur.getchannel("A").point(lambda v: int(v * cop)); cur.putalpha(al)
+        frame.paste(cur, (int(px - 6), int(py - 6)), cur)
 
 def footnote(frame, t):
     a = lin(t, 0.8, 1.1)
