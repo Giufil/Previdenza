@@ -131,7 +131,7 @@ def emoji_img(ch, size):
     return im.resize((max(1, int(im.width * r)), max(1, int(im.height * r))), Image.LANCZOS)
 T_ROW0, T_STEP = 1.6, 2.0          # 120 BPM: a row every 4 beats
 OUT_T = T_ROW0 + T_STEP * len(ROWS) - 0.8   # 10.8 -> final message
-RX0, RX1 = 40, 945
+RX0, RX1 = 100, 980
 RY0, RH, RG = 905, 128, 14
 
 def liquid_glass(frame, box, r=36, op=1.0, tint_a=120):
@@ -219,20 +219,20 @@ def row(frame, t, k):
         em = em.copy(); em.putalpha(em.getchannel("A").point(lambda v: int(v * op)))
     lay.alpha_composite(em, (int(X + 52 - em.width / 2), int(y + RH / 2 - em.height / 2)))
     # name + years
-    fn = fit_font("InterDisplay-Black", name, 340, 42, 28)
+    fn = fit_font("InterDisplay-Black", name, 318, 40, 28)
     text(d, (X + 100, y + 24), name, fn, WHITE, op)
     text(d, (X + 100, y + 78), years, font("InterDisplay-ExtraBold", 32), GOLD, op)
     # numbers appear directly with a quick pop
     p = lin(t, s + 0.12, s + 0.32)
     sc = 1 + 0.18 * (1 - eout(p)) if p < 1 else 1
-    fnum = font("InterDisplay-Black", 50 * sc)
-    fl = font("Inter-Bold", 19)
-    cx1, cx2 = X + 563, X + 785
+    fnum = font("InterDisplay-Black", 48 * sc)
+    fl = font("Inter-Bold", 18)
+    cx1, cx2 = X + 540, X + 752
     text(d, (cx1, y + 22), "CALO MAX", fl, (225, 228, 238), op, anchor="ma")
     text(d, (cx1, y + 52 - (sc - 1) * 22), "−" + itn(dd, 1) + "%", fnum, RED, op * clamp(p * 3 + 0.2), anchor="ma")
     text(d, (cx2, y + 22), "RIMBALZO 12 MESI", fl, (225, 228, 238), op, anchor="ma")
     text(d, (cx2, y + 52 - (sc - 1) * 22), "+" + itn(rb, 1) + "%", fnum, GREEN, op * clamp(p * 3 + 0.2), anchor="ma")
-    d.line([(X + 452, y + 22), (X + 452, y + RH - 22)], fill=(255, 255, 255, int(60 * op)), width=2)
+    d.line([(X + 432, y + 22), (X + 432, y + RH - 22)], fill=(255, 255, 255, int(60 * op)), width=2)
     overlay(frame, lay)
 
 def flash(arr, t):
@@ -294,8 +294,8 @@ def follow_scene(frame, t):
     lt = t - FOLLOW_T
     if lt < 0.1: return
     a = lin(lt, 0.1, 0.4)
-    cw = 960; sc = cw / PROFILE.width; ch = int(PROFILE.height * sc)
-    x0 = (W - cw) // 2; y0 = 260
+    cw = 780; sc = cw / PROFILE.width; ch = int(PROFILE.height * sc)
+    x0 = (W - cw) // 2; y0 = 272
     click = FOLLOW_T + 1.35
     followed = t >= click + 0.08
     press = math.sin(math.pi * lin(t, click, click + 0.16)) if click <= t < click + 0.16 else 0
@@ -304,21 +304,21 @@ def follow_scene(frame, t):
     w2, h2 = max(2, int(cw * (0.8 + 0.2 * k))), max(2, int(ch * (0.8 + 0.2 * k)))
     card = card.resize((w2, h2), Image.BILINEAR)
     cx0 = x0 + (cw - w2) // 2; cy0 = y0 + (ch - h2) // 2
-    sm, pad = shadow(w2, h2, 34, blur=26, a=150)
+    sm, pad = shadow(w2, h2, 28, blur=26, a=150)
     frame.paste(Image.new("RGB", sm.size, (0, 0, 0)), (cx0 - pad, cy0 - pad), sm.point(lambda v: int(v * op)))
-    frame.paste(card, (cx0, cy0), rr_mask(w2, h2, 34).point(lambda v: int(v * op)))
+    frame.paste(card, (cx0, cy0), rr_mask(w2, h2, 28).point(lambda v: int(v * op)))
     ov = Image.new("RGBA", (w2, h2), (0, 0, 0, 0))
-    ImageDraw.Draw(ov).rounded_rectangle([0, 0, w2 - 1, h2 - 1], 34, outline=(255, 255, 255, int(60 * op)), width=2)
+    ImageDraw.Draw(ov).rounded_rectangle([0, 0, w2 - 1, h2 - 1], 28, outline=(255, 255, 255, int(60 * op)), width=2)
     frame.paste(ov, (cx0, cy0), ov)
     # button centre in frame coords
-    bx = x0 + (BTN[0] + BTN[2]) / 2 * sc + 40
-    by = y0 + (BTN[1] + BTN[3]) / 2 * sc + 10
+    bx = x0 + (BTN[0] + BTN[2]) / 2 * sc + 32
+    by = y0 + (BTN[1] + BTN[3]) / 2 * sc + 8
     # ripple
     if click <= t < click + 0.45:
         r = lin(t, click, click + 0.45)
         lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
         R = 20 + 70 * eout(r)
-        d.ellipse([bx - 40 - R, by - 10 - R, bx - 40 + R, by - 10 + R], outline=(255, 255, 255, int(200 * (1 - r))), width=5)
+        d.ellipse([bx - 32 - R, by - 8 - R, bx - 32 + R, by - 8 + R], outline=(255, 255, 255, int(200 * (1 - r))), width=5)
         overlay(frame, lay)
     # cursor: enters from lower right, glides to the button, clicks, then rests
     m = lin(lt, 0.55, 1.3)
