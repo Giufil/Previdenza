@@ -120,6 +120,15 @@ ROWS = [  # name, years, drawdown, rebound 12m
     ("Crash Covid-19", "2020", -33.9, 74.8),
     ("Inflazione e tassi", "2022", -25.4, 21.6),
 ]
+EMOJI = ["\U0001F4A5", "\U0001F4BB", "\U0001F3E6", "\U0001F9A0", "\U0001F4B8"]  # crash, PC, bank, virus, money with wings
+@functools.lru_cache(None)
+def emoji_img(ch, size):
+    f = ImageFont.truetype("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf", 109)
+    im = Image.new("RGBA", (160, 160), (0, 0, 0, 0))
+    ImageDraw.Draw(im).text((80, 80), ch, font=f, embedded_color=True, anchor="mm")
+    im = im.crop(im.getbbox())
+    r = size / max(im.size)
+    return im.resize((max(1, int(im.width * r)), max(1, int(im.height * r))), Image.LANCZOS)
 T_ROW0, T_STEP = 1.6, 2.0          # 120 BPM: a row every 4 beats
 OUT_T = T_ROW0 + T_STEP * len(ROWS) - 0.8   # 10.8 -> final message
 RX0, RX1 = 40, 945
@@ -204,8 +213,11 @@ def row(frame, t, k):
     lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
     X = RX0 + xo
     # index badge
-    d.ellipse([X + 26, y + RH / 2 - 26, X + 78, y + RH / 2 + 26], fill=GOLD + (int(255 * op),))
-    d.text((X + 52, y + RH / 2 + 1), str(k + 1), font=font("InterDisplay-Black", 32), fill=(18, 18, 18, int(255 * op)), anchor="mm")
+    d.ellipse([X + 18, y + RH / 2 - 34, X + 86, y + RH / 2 + 34], fill=(255, 255, 255, int(38 * op)), outline=(255, 255, 255, int(70 * op)), width=2)
+    em = emoji_img(EMOJI[k], 54)
+    if op < 1:
+        em = em.copy(); em.putalpha(em.getchannel("A").point(lambda v: int(v * op)))
+    lay.alpha_composite(em, (int(X + 52 - em.width / 2), int(y + RH / 2 - em.height / 2)))
     # name + years
     fn = fit_font("InterDisplay-Black", name, 340, 42, 28)
     text(d, (X + 100, y + 24), name, fn, WHITE, op)
