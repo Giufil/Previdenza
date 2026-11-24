@@ -120,7 +120,7 @@ ROWS = [  # name, years, drawdown, rebound 12m
     ("Crash Covid-19", "2020", -33.9, 74.8),
     ("Inflazione e tassi", "2022", -25.4, 21.6),
 ]
-EMOJI = ["\U0001F4A5", "\U0001F4BB", "\U0001F3E6", "\U0001F9A0", "\U0001F4B8"]  # crash, PC, bank, virus, money with wings
+EMOJI = ["\U0001F4A5", "\U0001F4BB", "\U0001F3E6", "\U0001F9A0", "\U0001F4C8"]  # crash, PC, bank, virus, chart increasing
 @functools.lru_cache(None)
 def emoji_img(ch, size):
     f = ImageFont.truetype("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf", 109)
