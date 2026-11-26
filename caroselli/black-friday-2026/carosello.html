@@ -1,6 +1,6 @@
 <!doctype html><html lang="it"><head><meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Space+Mono:wght@400;700&family=Permanent+Marker&display=block" rel="stylesheet">
 <title>Black Friday 2026</title><style>:root{
   --navy:#13234B; --gold:#EBC163; --gold-d:#B37E1A; --red:#DD2F3E; --red2:#F0596A;
   --cream:#F8F4EC; --white:#FBF7EE; --blue1:#4B88E2; --blue2:#22397A;
@@ -443,10 +443,118 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
 #s3 .content{bottom:255px}
 #s3 .bgphoto{top:40px}
 #s3 .bgphoto{top:150px;opacity:.22}
+/* ===== tema BLACK FRIDAY: sfondo nero ===== */
+:root{--ink:#0A0A0C;--card:#141418;--line:#2A2A31;--hot:#FF2E4D;--paper:#F5F3EE}
+.slide.dark{background:linear-gradient(180deg,#0E0E11 0%,#08080A 100%);color:var(--paper)}
+.bgfx{position:absolute;inset:0;pointer-events:none;z-index:0}
+.grain{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 36px),repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 36px)}
+.dark .gold{color:var(--gold)}
+.dark .goldt{color:var(--gold)}
+.dark .redt{color:var(--hot)}
+.dark .lead{color:#E9E6DF}
+.dark .lead b{color:#fff}
+.dark .lead b.gold{color:var(--gold)}
+.dark .note{color:#A9A6A0;opacity:1}
+.dark .fin{border-color:rgba(255,255,255,.85)}
+
+/* cue */
+.cue2{position:absolute;left:0;right:0;top:1206px;display:flex;justify-content:center;align-items:center;gap:16px;font-size:34px;font-weight:600;color:#fff;z-index:7}
+.cue2 svg{color:var(--hot)}
+
+/* ponti tra slide */
+.bridge{position:absolute;z-index:8;transform-origin:50% 50%}
+.btag{position:relative;width:100%;height:100%;border-radius:26px 80px 80px 26px;background:linear-gradient(135deg,#FF4A63,#D3102D);
+  box-shadow:0 24px 50px rgba(255,46,77,.35),inset 0 0 0 4px rgba(255,255,255,.25);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
+.btag i{position:absolute;right:34px;top:50%;width:30px;height:30px;margin-top:-15px;border-radius:50%;background:#0A0A0C;box-shadow:inset 0 0 0 4px rgba(255,255,255,.4)}
+.btag b{font-weight:900;font-size:82px;line-height:.95;letter-spacing:-3px;margin-right:40px}
+.btag span{font-weight:800;font-size:18px;letter-spacing:5px;margin-right:40px}
+.bpol{width:100%;height:100%;background:#fff;padding:14px 14px 0;border-radius:8px;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.bpol .ph{height:270px;overflow:hidden;border-radius:4px}
+.bpol .ph img{width:100%;height:100%;object-fit:cover}
+.bpol p{font-family:'Permanent Marker',cursive;color:#D3102D;font-size:32px;text-align:center;margin-top:8px}
+.bcard{position:relative;width:100%;height:100%;border-radius:24px;overflow:hidden;color:#fff;
+  background:radial-gradient(circle at 80% 10%,rgba(255,46,77,.75),transparent 55%),linear-gradient(135deg,#2B2B33,#0E0E12);
+  box-shadow:0 30px 60px rgba(0,0,0,.6),inset 0 0 0 2px rgba(255,255,255,.18)}
+.bcard .chip{position:absolute;left:34px;top:62px;width:62px;height:46px;border-radius:9px;background:linear-gradient(135deg,#F7D27A,#B37E1A)}
+.bcard .cn{position:absolute;left:34px;top:134px;font-family:'Space Mono',monospace;font-size:24px;letter-spacing:2px}
+.bcard .cr{position:absolute;left:34px;bottom:26px;font-weight:800;font-size:20px;letter-spacing:3px;color:var(--gold)}
+.bcard .cl2{position:absolute;right:30px;top:24px;font-weight:900;font-size:20px;letter-spacing:3px;opacity:.9}
+.bcoin{width:100%;height:100%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 8px var(--gold),0 0 60px rgba(235,193,99,.45)}
+.bcoin img{width:100%;height:100%;object-fit:cover}
+
+/* slide 1: scontrino */
+#s1 .content{top:262px}
+#s1 h1.t2{font-size:80px}
+.receipt-wrap{position:absolute;left:150px;top:560px;width:560px;z-index:5}
+.receipt{position:relative;background:linear-gradient(180deg,#FBFAF5,#EFEDE4);color:#1B1B1B;font-family:'Space Mono',monospace;font-size:21px;line-height:1.5;
+  padding:34px 34px 26px;transform:rotate(-4deg);box-shadow:0 40px 80px rgba(0,0,0,.7);
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/22px 100%;
+  clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.receipt::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.018) 0 2px,transparent 2px 5px);pointer-events:none}
+.rc-h{text-align:center;font-weight:700;font-size:24px;letter-spacing:1px}
+.rc-s{text-align:center;font-size:17px;opacity:.7}
+.rc-d{border-top:3px dashed #9A978E;margin:10px 0}
+.rl{display:flex;justify-content:space-between;gap:12px}
+.rl.red{color:#C8102E;font-weight:700;font-size:19px}
+.rl.tot{font-weight:700;font-size:28px;margin-top:4px}
+.rl.hl{font-weight:700;font-size:19px;align-items:center;padding:6px 8px;margin:0 -8px;
+  background:linear-gradient(100deg,rgba(255,46,77,.0) 0,rgba(255,46,77,.55) 4%,rgba(255,46,77,.5) 96%,rgba(255,46,77,0));color:#5A0010}
+.rl.hl span:last-child{font-size:30px;color:#B0001E}
+.bar{height:50px;margin:14px 30px 6px;background:repeating-linear-gradient(90deg,#1B1B1B 0 3px,transparent 3px 6px,#1B1B1B 6px 7px,transparent 7px 11px,#1B1B1B 11px 15px,transparent 15px 17px)}
+.hand{position:absolute;left:600px;top:420px;width:260px;font-family:'Permanent Marker',cursive;color:var(--gold);font-size:40px;line-height:1.1;transform:rotate(-6deg)}
+.stamp{position:absolute;left:590px;top:40px;width:220px;height:220px;border-radius:50%;border:6px solid var(--hot);color:var(--hot);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:19px;letter-spacing:2px;line-height:1.25;transform:rotate(14deg);opacity:.92;
+  box-shadow:inset 0 0 0 4px rgba(255,46,77,.0),inset 0 0 0 10px #0A0A0C,inset 0 0 0 13px var(--hot)}
+.stamp b{font-size:30px;font-weight:900}
+.s1note{position:absolute !important;top:840px !important;left:auto !important;right:0 !important;width:250px;font-size:16px}
+
+/* componenti scuri */
+.dark .photo-strip{box-shadow:0 20px 50px rgba(0,0,0,.6);border:1px solid var(--line)}
+.dark .cbox{background:var(--card);border:1px solid var(--line);color:#fff}
+.dark .cbox.hi{background:linear-gradient(135deg,#FF4A63,#C8102E);border-color:transparent}
+.dark .op{color:var(--gold)}
+.dark .navybar{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--hot);color:#fff}
+.dark .chart-box{background:var(--card);border:1px solid var(--line)}
+.dark .legend{color:#E9E6DF}
+.dark .chart .ax{fill:#F5F3EE;opacity:.6}
+.dark .chart .grid{stroke:#fff;stroke-opacity:.14}
+.dark .lg.n{background:#F5F3EE}
+.dark .lg.b.dash{background:repeating-linear-gradient(90deg,#7FA7FF 0 6px,transparent 6px 12px)}
+#s3 .pbox .legend{color:#E9E6DF}
+.dark .glass,#s3 .glass,#s5 .glass{background:var(--card);color:#fff;border:1px solid rgba(235,193,99,.55)}
+.dark .rh .mh{background:#1E1E24;color:var(--gold);border:1px solid var(--line)}
+.dark .rr:not(.rh){background:var(--card);border:1px solid var(--line)}
+.dark .rk{color:#fff}
+.dark .rt{background:rgba(255,46,77,.14);color:#FF7A8E}
+.dark .rr.rtot{background:#1E1E24;border:2px solid var(--hot);box-shadow:0 0 40px rgba(255,46,77,.25)}
+.dark .rr.rtot .rt{background:linear-gradient(90deg,#FF4A63,#C8102E);color:#fff}
+#s5 .sc-box{background:var(--card);color:#fff;border:1px solid var(--line);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+#s5 .sc-tag{background:var(--hot);color:#fff}
+#s5 .hbar{background:#24242A}
+.dark .fill.grey{background:#3A3A42;color:#E9E6DF}
+.dark .split>div:not(.plus){background:var(--card);border:1px solid var(--line)}
+.dark .plus{color:var(--gold)}
+.dark .result .eq,.dark .result b,.dark .result small{color:#0A0A0C}
+.dark .q{background:var(--paper);color:#0A0A0C}
+.dark .qc{border-color:var(--hot);color:var(--hot)}
+.dark .ctab{background:var(--card);border:1px solid rgba(235,193,99,.5)}
+.dark .disc{color:#9A978F;opacity:1}
+.dark .dl-note{background:var(--card)}
+/* spazio per i ponti in basso */
+.content{bottom:250px}
+#s7 .content{bottom:110px}
+/* rev 2 */
+.slide#s5 .sc-box{background:var(--card);color:#fff;border:1px solid var(--line)}
+.slide#s5 .sc-tag{background:var(--hot);color:#fff}
+.slide#s5 .hbar{background:#24242A}
+.hand{top:290px}
+.s1note{top:700px !important}
 </style></head><body>
 
-<section class="slide blue" id="s1">
-  <div class="rings"></div>
+<section class="slide dark" id="s1">
+  <div class="bgfx" style="background:radial-gradient(circle at 1080px 300px,rgba(255,46,77,.30) 0,rgba(255,46,77,.10) 260px,transparent 520px)"></div>
+  <div class="grain"></div>
   
   <div class="hdr">
     <div class="brand"><div class="nm">GIULIO<br>FILIERI</div><div class="sep"></div>
@@ -454,25 +562,32 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
     <div class="pg">1/7</div>
   </div>
   
-  <div class="pill">BLACK FRIDAY 2026 · È DOMANI</div>
-  <div class="content">
-  <h1 class="t1">LO SCONTO<br>PIÙ GRANDE?<br><span class="gold big100">−100%.</span></h1>
-  <p class="lead s1lead">Domani <b>2 su 3 italiani</b> faranno acquisti: <b>262 € a testa</b>. Ti mostro cosa diventa quella cifra <b class="gold">se cambi carrello.</b></p>
-  <div class="vs-wrap">
-    <div class="vs-card"><img src="img/bf_vetrina.jpg" style="object-position:50% 38%"><div class="vs-shade red"></div>
-      <div class="vs-lbl"><span class="emo">🛒</span>NEL CARRELLO</div><div class="vs-amt">262 €</div></div>
-    <div class="vs-card"><img src="img/eurocoins.jpg"><div class="vs-shade blue"></div>
-      <div class="vs-lbl"><span class="emo">📈</span>INVESTITI*</div><div class="vs-amt blur">26.481 €</div></div>
-    <div class="vs-badge">VS</div>
+  <div class="pill">BLACK FRIDAY 2026 · È DOMANI</div><!--/abs-->
+  <div class="receipt-wrap"><div class="receipt">
+    <div class="rc-h">★ BLACK FRIDAY STORE ★</div>
+    <div class="rc-s">27/11/2026 &nbsp; 23:58 &nbsp; CASSA 03</div>
+    <div class="rc-d"></div>
+    <div class="rl"><span>CUFFIE WIRELESS</span><span>79,90</span></div><div class="rl"><span>SNEAKERS</span><span>89,00</span></div><div class="rl"><span>FELPA</span><span>39,90</span></div><div class="rl"><span>SMART SPEAKER</span><span>29,90</span></div><div class="rl"><span>COVER TELEFONO</span><span>12,90</span></div><div class="rl"><span>CALZINI NATALIZI</span><span>10,40</span></div>
+    <div class="rc-d"></div>
+    <div class="rl"><span>SUBTOTALE</span><span>374,29</span></div>
+    <div class="rl red"><span>SCONTO BLACK FRIDAY −30%</span><span>−112,29</span></div>
+    <div class="rl tot"><span>TOTALE €</span><span>262,00</span></div>
+    <div class="rc-d"></div>
+    <div class="rl hl"><span>INVESTITI · 30 ANNI*</span><span>26.481,00</span></div>
+    <div class="bar"></div>
   </div>
-  <p class="note light s1note">*262 € ogni Black Friday per 30 anni, ipotesi 7% annuo lordo. Esempio illustrativo.</p>
+  <div class="hand">il numero<br>che conta ↓</div>
+  <div class="stamp">GRAZIE<br>E ARRIVEDERCI<br><b>AL CONTO</b></div></div><!--/abs-->
+  <div class="content">
+  <h1 class="t2">LO SCONTRINO<br>CHE NESSUNO<br><span class="gold">TI FA LEGGERE.</span></h1>
+  <p class="note s1note">*262 € (spesa media 2026) ogni anno per 30 anni, ipotesi 7% annuo lordo. Esempio illustrativo.</p>
 </div>
-  <div class="gline" style="top:1240px"></div>
-<div class="coin" style="left:1000px;top:1160px"><span>€</span></div>
-<div class="cue" style="top:1130px">Scorri e scopri come <svg width="64" height="26" viewBox="0 0 64 26"><path d="M2 13h56M46 2l12 11-12 11" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="bridge" style="left:915px;top:1120px;width:330px;height:160px;transform:rotate(-12deg)"><div class="btag"><i></i><b>−30%</b><span>BLACK FRIDAY</span></div></div>
+<div class="cue2">Scorri: ti spiego quel numero <svg width="64" height="26" viewBox="0 0 64 26"><path d="M2 13h56M46 2l12 11-12 11" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </section>
-<section class="slide cream" id="s2">
-  <div class="rings"></div>
+<section class="slide dark" id="s2">
+  <div class="bgfx" style="background:radial-gradient(circle at 1080px 760px,rgba(235,193,99,.30) 0,rgba(235,193,99,.10) 260px,transparent 520px),radial-gradient(circle at 0px 300px,rgba(255,46,77,.30) 0,rgba(255,46,77,.10) 260px,transparent 520px)"></div>
+  <div class="grain"></div>
   
   <div class="hdr">
     <div class="brand"><div class="nm">GIULIO<br>FILIERI</div><div class="sep"></div>
@@ -480,7 +595,7 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
     <div class="pg">2/7</div>
   </div>
   
-  <div class="pill">I NUMERI · ITALIA 2026</div>
+  <div class="pill">I NUMERI · ITALIA 2026</div><!--/abs-->
   <div class="content">
   <h1 class="t2">6,6 MILIARDI<br><span class="gold">IN UNA SETTIMANA.</span></h1>
   <div class="photo-strip"><img src="img/bf_buste.jpg" style="object-position:50% 60%"><div class="strip-txt">🛍️ Una settimana di offerte. Poi arriva gennaio.</div></div>
@@ -494,13 +609,13 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
   <div class="navybar">Il problema non è comprare.<br>È comprare <span class="gold">ciò che non avevi in programma.</span></div>
   <p class="note">Stime Confcommercio–Format Research, Black Friday 2026 (settimana di sconti, online e negozi fisici).</p>
 </div>
-  <div class="gline" style="top:1240px"></div>
-<div class="coin" style="left:-80px;top:1160px"><span>€</span></div>
-<div class="coin" style="left:1000px;top:1160px"><span>€</span></div>
-<div class="cue" style="top:1130px">Scorri: la trappola n°1 <svg width="64" height="26" viewBox="0 0 64 26"><path d="M2 13h56M46 2l12 11-12 11" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="bridge" style="left:930px;top:1110px;width:300px;height:360px;transform:rotate(7deg)"><div class="bpol"><div class="ph"><img src="img/bf_vetrina.jpg" style="object-position:50% 30%"></div><p>ultimo giorno!!</p></div></div>
+<div class="bridge" style="left:-165px;top:1120px;width:330px;height:160px;transform:rotate(-12deg)"><div class="btag"><i></i><b>−30%</b><span>BLACK FRIDAY</span></div></div>
+<div class="cue2">Scorri: la trappola n°1 <svg width="64" height="26" viewBox="0 0 64 26"><path d="M2 13h56M46 2l12 11-12 11" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </section>
-<section class="slide blue" id="s3">
-  <div class="rings"></div>
+<section class="slide dark" id="s3">
+  <div class="bgfx" style="background:radial-gradient(circle at 1080px 420px,rgba(255,46,77,.30) 0,rgba(255,46,77,.10) 260px,transparent 520px),radial-gradient(circle at 0px 760px,rgba(235,193,99,.30) 0,rgba(235,193,99,.10) 260px,transparent 520px)"></div>
+  <div class="grain"></div>
   
   <div class="hdr">
     <div class="brand"><div class="nm">GIULIO<br>FILIERI</div><div class="sep"></div>
@@ -509,29 +624,29 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
   </div>
   
   <div class="pill">TRAPPOLA N°1 · LO SCONTO</div>
-  <div class="bgphoto"><img src="img/bf_saldi.jpg" style="object-position:30% 40%"></div>
+  <!--/abs-->
   <div class="content">
   <h1 class="t2">LO SCONTO<br><span class="gold">È VERO?</span></h1>
   <p class="lead">Altroconsumo ha confrontato i prezzi del Black Friday con quelli di gennaio: <b class="gold">spesso sono identici.</b></p>
   <div class="chart-box pbox"><div class="legend"><span>📈 Alzo il prezzo, poi lo «sconto»</span><span class="yrs">esempio illustrativo</span></div><svg class="chart" viewBox="0 0 880 330">
   <line class="grid" x1="40" x2="840" y1="190" y2="190" stroke-dasharray="8 8"/>
-  <rect x="303" y="66" width="122" height="124" rx="12" fill="#DD2F3E" fill-opacity=".12"/>
-  <path d="M60,190 L212,190 L364,80 L516,190 L668,190 L820,190" fill="none" stroke="#13234B" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
-  <circle cx="60" cy="190" r="10" fill="#13234B" stroke="#fff" stroke-width="4"/><circle cx="212" cy="190" r="10" fill="#13234B" stroke="#fff" stroke-width="4"/><circle cx="364" cy="80" r="10" fill="#13234B" stroke="#fff" stroke-width="4"/><circle cx="516" cy="190" r="10" fill="#DD2F3E" stroke="#fff" stroke-width="4"/><circle cx="668" cy="190" r="10" fill="#13234B" stroke="#fff" stroke-width="4"/><circle cx="820" cy="190" r="10" fill="#13234B" stroke="#fff" stroke-width="4"/>
-  <text x="364" y="54" text-anchor="middle" style="font:800 26px Poppins;fill:#DD2F3E">129 € «prezzo pieno»</text>
-  <g transform="translate(534,216)"><rect width="150" height="50" rx="25" fill="#DD2F3E"/><text x="75" y="35" text-anchor="middle" style="font:900 28px Poppins;fill:#fff">−23% 🔥</text></g>
-  <text x="820" y="166" text-anchor="end" style="font:700 24px Poppins;fill:#13234B">99 € · sempre lo stesso</text>
-  <text class="ax" x="60" y="316" text-anchor="middle">SET</text><text class="ax" x="212" y="316" text-anchor="middle">OTT</text><text class="ax" x="364" y="316" text-anchor="middle">INIZIO NOV</text><text class="ax" x="516" y="316" text-anchor="middle" style='font-weight:800;fill:#DD2F3E;opacity:1'>BLACK FRIDAY</text><text class="ax" x="668" y="316" text-anchor="middle">DIC</text><text class="ax" x="820" y="316" text-anchor="middle">GEN</text>
+  <rect x="303" y="66" width="122" height="124" rx="12" fill="#FF2E4D" fill-opacity=".12"/>
+  <path d="M60,190 L212,190 L364,80 L516,190 L668,190 L820,190" fill="none" stroke="#F5F3EE" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="60" cy="190" r="10" fill="#F5F3EE" stroke="#0A0A0C" stroke-width="4"/><circle cx="212" cy="190" r="10" fill="#F5F3EE" stroke="#0A0A0C" stroke-width="4"/><circle cx="364" cy="80" r="10" fill="#F5F3EE" stroke="#0A0A0C" stroke-width="4"/><circle cx="516" cy="190" r="10" fill="#FF2E4D" stroke="#0A0A0C" stroke-width="4"/><circle cx="668" cy="190" r="10" fill="#F5F3EE" stroke="#0A0A0C" stroke-width="4"/><circle cx="820" cy="190" r="10" fill="#F5F3EE" stroke="#0A0A0C" stroke-width="4"/>
+  <text x="364" y="54" text-anchor="middle" style="font:800 26px Poppins;fill:#FF2E4D">129 € «prezzo pieno»</text>
+  <g transform="translate(534,216)"><rect width="150" height="50" rx="25" fill="#FF2E4D"/><text x="75" y="35" text-anchor="middle" style="font:900 28px Poppins;fill:#fff">−23% 🔥</text></g>
+  <text x="820" y="166" text-anchor="end" style="font:700 24px Poppins;fill:#F5F3EE">99 € · sempre lo stesso</text>
+  <text class="ax" x="60" y="316" text-anchor="middle">SET</text><text class="ax" x="212" y="316" text-anchor="middle">OTT</text><text class="ax" x="364" y="316" text-anchor="middle">INIZIO NOV</text><text class="ax" x="516" y="316" text-anchor="middle" style='font-weight:800;fill:#FF2E4D;opacity:1'>BLACK FRIDAY</text><text class="ax" x="668" y="316" text-anchor="middle">DIC</text><text class="ax" x="820" y="316" text-anchor="middle">GEN</text>
 </svg></div>
   <div class="glass"><span class="emo-l">🛡️</span><div><b>La legge è dalla tua parte:</b> lo sconto va calcolato sul <span class="gold"><b>prezzo più basso degli ultimi 30 giorni</b></span> (Direttiva Omnibus). Qui il vero sconto è <b>0%</b>.</div></div>
 </div>
-  <div class="gline" style="top:1240px"></div>
-<div class="coin" style="left:-80px;top:1160px"><span>€</span></div>
-<div class="coin" style="left:1000px;top:1160px"><span>€</span></div>
-<div class="cue" style="top:1130px">Scorri: la trappola n°2 <svg width="64" height="26" viewBox="0 0 64 26"><path d="M2 13h56M46 2l12 11-12 11" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="bridge" style="left:890px;top:1150px;width:380px;height:238px;transform:rotate(-9deg)"><div class="bcard"><div class="chip"></div><div class="cn">•••• •••• •••• 2026</div><div class="cr">RATA 1 DI 3</div><div class="cl2">PAGA DOPO</div></div></div>
+<div class="bridge" style="left:-150px;top:1110px;width:300px;height:360px;transform:rotate(7deg)"><div class="bpol"><div class="ph"><img src="img/bf_vetrina.jpg" style="object-position:50% 30%"></div><p>ultimo giorno!!</p></div></div>
+<div class="cue2">Scorri: la trappola n°2 <svg width="64" height="26" viewBox="0 0 64 26"><path d="M2 13h56M46 2l12 11-12 11" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </section>
-<section class="slide cream" id="s4">
-  <div class="rings"></div>
+<section class="slide dark" id="s4">
+  <div class="bgfx" style="background:radial-gradient(circle at 1080px 900px,rgba(235,193,99,.30) 0,rgba(235,193,99,.10) 260px,transparent 520px),radial-gradient(circle at 0px 420px,rgba(255,46,77,.30) 0,rgba(255,46,77,.10) 260px,transparent 520px)"></div>
+  <div class="grain"></div>
   
   <div class="hdr">
     <div class="brand"><div class="nm">GIULIO<br>FILIERI</div><div class="sep"></div>
@@ -539,10 +654,10 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
     <div class="pg">4/7</div>
   </div>
   
-  <div class="pill">TRAPPOLA N°2 · LE RATE</div>
+  <div class="pill">TRAPPOLA N°2 · LE RATE</div><!--/abs-->
   <div class="content">
   <h1 class="t2">COMPRI OGGI,<br><span class="gold">PAGHI A GENNAIO.</span></h1>
-  <p class="lead dark">Il <b>42%</b> di chi compra al Black Friday pensa di pagare <b>a rate</b>. Sembrano piccole. Insieme:</p>
+  <p class="lead">Il <b>42%</b> di chi compra al Black Friday pensa di pagare <b>a rate</b>. Sembrano piccole. Insieme:</p>
   <div class="rcal">
     <div class="rr rh"><div></div><div class="mh">DIC</div><div class="mh">GEN</div><div class="mh">FEB</div></div>
     <div class="rr"><div class="rk"><span>📱</span><div><b>Smartphone</b><small>600 € in 3 rate</small></div></div><div class="rt">200 €</div><div class="rt">200 €</div><div class="rt">200 €</div></div><div class="rr"><div class="rk"><span>🎧</span><div><b>Cuffie</b><small>150 € in 3 rate</small></div></div><div class="rt">50 €</div><div class="rt">50 €</div><div class="rt">50 €</div></div><div class="rr"><div class="rk"><span>👟</span><div><b>Sneakers</b><small>120 € in 3 rate</small></div></div><div class="rt">40 €</div><div class="rt">40 €</div><div class="rt">40 €</div></div><div class="rr"><div class="rk"><span>🎁</span><div><b>Regali</b><small>240 € in 3 rate</small></div></div><div class="rt">80 €</div><div class="rt">80 €</div><div class="rt">80 €</div></div>
@@ -550,13 +665,12 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
   </div>
   <div class="navybar warn">⚠️ 4 acquisti «a zero interessi» = <span class="gold">12 rate</span> tra Natale e i saldi. E se ne salti una, possono scattare penali.</div>
 </div>
-  <div class="gline" style="top:1240px"></div>
-<div class="coin" style="left:-80px;top:1160px"><span>€</span></div>
-<div class="coin" style="left:1000px;top:1160px"><span>€</span></div>
-<div class="cue" style="top:1130px">Scorri: la matematica dello sconto <svg width="64" height="26" viewBox="0 0 64 26"><path d="M2 13h56M46 2l12 11-12 11" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="bridge" style="left:-190px;top:1150px;width:380px;height:238px;transform:rotate(-9deg)"><div class="bcard"><div class="chip"></div><div class="cn">•••• •••• •••• 2026</div><div class="cr">RATA 1 DI 3</div><div class="cl2">PAGA DOPO</div></div></div>
+<div class="cue2">Scorri: fai due conti <svg width="64" height="26" viewBox="0 0 64 26"><path d="M2 13h56M46 2l12 11-12 11" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </section>
-<section class="slide blue" id="s5">
-  <div class="rings"></div>
+<section class="slide dark" id="s5">
+  <div class="bgfx" style="background:radial-gradient(circle at 1080px 380px,rgba(255,46,77,.30) 0,rgba(255,46,77,.10) 260px,transparent 520px),radial-gradient(circle at 0px 900px,rgba(235,193,99,.30) 0,rgba(235,193,99,.10) 260px,transparent 520px)"></div>
+  <div class="grain"></div>
   
   <div class="hdr">
     <div class="brand"><div class="nm">GIULIO<br>FILIERI</div><div class="sep"></div>
@@ -564,7 +678,7 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
     <div class="pg">5/7</div>
   </div>
   
-  <div class="pill">LA MATEMATICA DELLO SCONTO</div>
+  <div class="pill">LA MATEMATICA DELLO SCONTO</div><!--/abs-->
   <div class="content">
   <h1 class="t3">−30% SU CIÒ CHE<br>NON TI SERVE<br><span class="gold">= SPENDI IL 70%.</span></h1>
   <div class="sc-box">
@@ -578,13 +692,12 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
   </div>
   <div class="glass"><span class="emo-l">💡</span><div>Uno sconto è un risparmio <span class="gold"><b>solo se l'acquisto era già nel tuo budget.</b></span> Altrimenti è solo una spesa.</div></div>
 </div>
-  <div class="gline" style="top:1240px"></div>
-<div class="coin" style="left:-80px;top:1160px"><span>€</span></div>
-<div class="coin" style="left:1000px;top:1160px"><span>€</span></div>
-<div class="cue" style="top:1130px">Scorri: e se lo investissi? <svg width="64" height="26" viewBox="0 0 64 26"><path d="M2 13h56M46 2l12 11-12 11" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="bridge" style="left:920px;top:1090px;width:320px;height:320px;transform:rotate(0deg)"><div class="bcoin"><img src="img/eurocoins.jpg"></div></div>
+<div class="cue2">Scorri: e se lo investissi? <svg width="64" height="26" viewBox="0 0 64 26"><path d="M2 13h56M46 2l12 11-12 11" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </section>
-<section class="slide cream" id="s6">
-  <div class="rings"></div>
+<section class="slide dark" id="s6">
+  <div class="bgfx" style="background:radial-gradient(circle at 1080px 700px,rgba(235,193,99,.30) 0,rgba(235,193,99,.10) 260px,transparent 520px),radial-gradient(circle at 0px 380px,rgba(255,46,77,.30) 0,rgba(255,46,77,.10) 260px,transparent 520px)"></div>
+  <div class="grain"></div>
   
   <div class="hdr">
     <div class="brand"><div class="nm">GIULIO<br>FILIERI</div><div class="sep"></div>
@@ -592,7 +705,7 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
     <div class="pg">6/7</div>
   </div>
   
-  <div class="pill">262 € L'ANNO · 30 ANNI</div>
+  <div class="pill">262 € L'ANNO · 30 ANNI</div><!--/abs-->
   <div class="content">
   <h1 class="t3">E SE IL CARRELLO<br><span class="gold">FOSSE UN PAC?</span></h1>
   <div class="chart-box">
@@ -602,12 +715,12 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
   <line class="grid" x1="70" x2="800" y1="256.0" y2="256.0"/><text class="ax" x="58" y="264.0" text-anchor="end">0k</text><line class="grid" x1="70" x2="800" y1="170.3" y2="170.3"/><text class="ax" x="58" y="178.3" text-anchor="end">10k</text><line class="grid" x1="70" x2="800" y1="84.6" y2="84.6"/><text class="ax" x="58" y="92.6" text-anchor="end">20k</text><text class="ax" x="70.0" y="292" text-anchor="middle">0</text><text class="ax" x="313.3" y="292" text-anchor="middle">10</text><text class="ax" x="556.7" y="292" text-anchor="middle">20</text><text class="ax" x="800.0" y="292" text-anchor="middle">30</text>
   <path d="M70.0,256.0 L94.3,253.6 L118.7,251.0 L143.0,248.3 L167.3,245.3 L191.7,242.2 L216.0,238.8 L240.3,235.2 L264.7,231.3 L289.0,227.2 L313.3,222.8 L337.7,218.1 L362.0,213.0 L386.3,207.6 L410.7,201.8 L435.0,195.6 L459.3,189.0 L483.7,181.9 L508.0,174.3 L532.3,166.2 L556.7,157.5 L581.0,148.2 L605.3,138.2 L629.7,127.6 L654.0,116.2 L678.3,104.0 L702.7,91.0 L727.0,77.0 L751.3,62.1 L775.7,46.1 L800.0,29.0 L800,256.0 L70,256.0 Z" fill="url(#ga)"/>
   <path d="M70.0,256.0 L94.3,253.6 L118.7,251.0 L143.0,248.3 L167.3,245.3 L191.7,242.2 L216.0,238.8 L240.3,235.2 L264.7,231.3 L289.0,227.2 L313.3,222.8 L337.7,218.1 L362.0,213.0 L386.3,207.6 L410.7,201.8 L435.0,195.6 L459.3,189.0 L483.7,181.9 L508.0,174.3 L532.3,166.2 L556.7,157.5 L581.0,148.2 L605.3,138.2 L629.7,127.6 L654.0,116.2 L678.3,104.0 L702.7,91.0 L727.0,77.0 L751.3,62.1 L775.7,46.1 L800.0,29.0" fill="none" stroke="#D9A133" stroke-width="7" stroke-linecap="round"/>
-  <path d="M70.0,256.0 L94.3,253.7 L118.7,251.2 L143.0,248.7 L167.3,246.1 L191.7,243.3 L216.0,240.5 L240.3,237.6 L264.7,234.5 L289.0,231.3 L313.3,228.0 L337.7,224.5 L362.0,220.9 L386.3,217.2 L410.7,213.3 L435.0,209.2 L459.3,205.0 L483.7,200.7 L508.0,196.1 L532.3,191.4 L556.7,186.5 L581.0,181.3 L605.3,176.0 L629.7,170.5 L654.0,164.7 L678.3,158.7 L702.7,152.5 L727.0,146.0 L751.3,139.3 L775.7,132.3 L800.0,125.0" fill="none" stroke="#3A62B8" stroke-width="5" stroke-dasharray="2 12" stroke-linecap="round"/>
-  <path d="M70.0,256.0 L94.3,253.8 L118.7,251.5 L143.0,249.3 L167.3,247.0 L191.7,244.8 L216.0,242.5 L240.3,240.3 L264.7,238.0 L289.0,235.8 L313.3,233.5 L337.7,231.3 L362.0,229.1 L386.3,226.8 L410.7,224.6 L435.0,222.3 L459.3,220.1 L483.7,217.8 L508.0,215.6 L532.3,213.3 L556.7,211.1 L581.0,208.8 L605.3,206.6 L629.7,204.3 L654.0,202.1 L678.3,199.9 L702.7,197.6 L727.0,195.4 L751.3,193.1 L775.7,190.9 L800.0,188.6 L800,256.0 L70,256.0 Z" fill="#13234B" fill-opacity=".14"/>
-  <path d="M70.0,256.0 L94.3,253.8 L118.7,251.5 L143.0,249.3 L167.3,247.0 L191.7,244.8 L216.0,242.5 L240.3,240.3 L264.7,238.0 L289.0,235.8 L313.3,233.5 L337.7,231.3 L362.0,229.1 L386.3,226.8 L410.7,224.6 L435.0,222.3 L459.3,220.1 L483.7,217.8 L508.0,215.6 L532.3,213.3 L556.7,211.1 L581.0,208.8 L605.3,206.6 L629.7,204.3 L654.0,202.1 L678.3,199.9 L702.7,197.6 L727.0,195.4 L751.3,193.1 L775.7,190.9 L800.0,188.6" fill="none" stroke="#13234B" stroke-width="4"/>
-  <circle cx="800" cy="29.0" r="11" fill="#fff" stroke="#D9A133" stroke-width="6"/>
-  <text x="780" y="109.0" text-anchor="end" style="font:700 22px Poppins;fill:#2F59B5">15.282 €</text>
-  <text x="780" y="174.6" text-anchor="end" style="font:700 22px Poppins;fill:#13234B">7.860 €</text>
+  <path d="M70.0,256.0 L94.3,253.7 L118.7,251.2 L143.0,248.7 L167.3,246.1 L191.7,243.3 L216.0,240.5 L240.3,237.6 L264.7,234.5 L289.0,231.3 L313.3,228.0 L337.7,224.5 L362.0,220.9 L386.3,217.2 L410.7,213.3 L435.0,209.2 L459.3,205.0 L483.7,200.7 L508.0,196.1 L532.3,191.4 L556.7,186.5 L581.0,181.3 L605.3,176.0 L629.7,170.5 L654.0,164.7 L678.3,158.7 L702.7,152.5 L727.0,146.0 L751.3,139.3 L775.7,132.3 L800.0,125.0" fill="none" stroke="#7FA7FF" stroke-width="5" stroke-dasharray="2 12" stroke-linecap="round"/>
+  <path d="M70.0,256.0 L94.3,253.8 L118.7,251.5 L143.0,249.3 L167.3,247.0 L191.7,244.8 L216.0,242.5 L240.3,240.3 L264.7,238.0 L289.0,235.8 L313.3,233.5 L337.7,231.3 L362.0,229.1 L386.3,226.8 L410.7,224.6 L435.0,222.3 L459.3,220.1 L483.7,217.8 L508.0,215.6 L532.3,213.3 L556.7,211.1 L581.0,208.8 L605.3,206.6 L629.7,204.3 L654.0,202.1 L678.3,199.9 L702.7,197.6 L727.0,195.4 L751.3,193.1 L775.7,190.9 L800.0,188.6 L800,256.0 L70,256.0 Z" fill="#F5F3EE" fill-opacity=".10"/>
+  <path d="M70.0,256.0 L94.3,253.8 L118.7,251.5 L143.0,249.3 L167.3,247.0 L191.7,244.8 L216.0,242.5 L240.3,240.3 L264.7,238.0 L289.0,235.8 L313.3,233.5 L337.7,231.3 L362.0,229.1 L386.3,226.8 L410.7,224.6 L435.0,222.3 L459.3,220.1 L483.7,217.8 L508.0,215.6 L532.3,213.3 L556.7,211.1 L581.0,208.8 L605.3,206.6 L629.7,204.3 L654.0,202.1 L678.3,199.9 L702.7,197.6 L727.0,195.4 L751.3,193.1 L775.7,190.9 L800.0,188.6" fill="none" stroke="#F5F3EE" stroke-width="4"/>
+  <circle cx="800" cy="29.0" r="11" fill="#0A0A0C" stroke="#D9A133" stroke-width="6"/>
+  <text x="780" y="109.0" text-anchor="end" style="font:700 22px Poppins;fill:#7FA7FF">15.282 €</text>
+  <text x="780" y="174.6" text-anchor="end" style="font:700 22px Poppins;fill:#F5F3EE">7.860 €</text>
 </svg>
   </div>
   <div class="split">
@@ -618,13 +731,12 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
   <div class="result"><div class="eq">=</div><div><small>DOPO 30 BLACK FRIDAY «SALTATI»</small><b>26.481 €</b></div></div>
   <p class="note">Ipotesi: 262 € a inizio anno, rendimento costante, lordo di tasse e costi. Netto 26%: 21.640 € (7%), 13.352 € (4%). Rendimenti ipotetici, non garantiti.</p>
 </div>
-  <div class="gline" style="top:1240px"></div>
-<div class="coin" style="left:-80px;top:1160px"><span>€</span></div>
-<div class="coin" style="left:1000px;top:1160px"><span>€</span></div>
-<div class="cue" style="top:1130px">Ultima: da salvare <svg width="64" height="26" viewBox="0 0 64 26"><path d="M2 13h56M46 2l12 11-12 11" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="bridge" style="left:-160px;top:1090px;width:320px;height:320px;transform:rotate(0deg)"><div class="bcoin"><img src="img/eurocoins.jpg"></div></div>
+<div class="cue2">Ultima: da salvare <svg width="64" height="26" viewBox="0 0 64 26"><path d="M2 13h56M46 2l12 11-12 11" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </section>
-<section class="slide blue" id="s7">
-  <div class="rings"></div>
+<section class="slide dark" id="s7">
+  <div class="bgfx" style="background:radial-gradient(circle at 0px 700px,rgba(235,193,99,.30) 0,rgba(235,193,99,.10) 260px,transparent 520px)"></div>
+  <div class="grain"></div>
   
   <div class="hdr">
     <div class="brand"><div class="nm">GIULIO<br>FILIERI</div><div class="sep"></div>
@@ -632,7 +744,7 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
     <div class="pg">7/7</div>
   </div>
   
-  <div class="pill">DA SALVARE 🔖</div>
+  <div class="pill">DA SALVARE 🔖</div><!--/abs-->
   <div class="content">
   <h1 class="t3">PRIMA DI PAGARE,<br><span class="gold">4 DOMANDE.</span></h1>
   <div class="qlist"><div class="q"><span class="qn">1</span><div>Lo avrei comprato <b>anche a prezzo pieno?</b></div><span class="qc">✓</span></div><div class="q"><span class="qn">2</span><div>Lo sconto è sul <b>prezzo minimo degli ultimi 30 giorni?</b></div><span class="qc">✓</span></div><div class="q"><span class="qn">3</span><div>Posso pagarlo <b>subito, senza rate?</b></div><span class="qc">✓</span></div><div class="q"><span class="qn">4</span><div>Ho già messo da parte <b>la quota per il mio futuro?</b></div><span class="qc">✓</span></div></div>
@@ -641,9 +753,8 @@ h1{position:absolute;left:100px;right:80px;font-weight:800;line-height:1.02;lett
     <div class="ctab"><span>🗳️</span><div>Tu domani? Commenta <b>🛒</b> se compri, <b>📈</b> se investi.</div></div>
     <div class="ctab"><span>📤</span><div>Mandalo a chi ha già il carrello pieno.</div></div>
   </div>
-  <p class="disc light">Contenuto informativo: non è consulenza personalizzata né raccomandazione di investimento. Esempi illustrativi; i rendimenti passati non garantiscono quelli futuri. Investire comporta il rischio di perdite.<br>Fonti: Confcommercio–Format Research, Black Friday 2026; Altroconsumo, «Offerte online: a gennaio i prezzi sono spesso uguali a quelli dell'ultimo Black Friday»; Scalapay, Black Friday 2025; D.Lgs. 26/2023 (Omnibus). Foto: Wikimedia Commons — Kgbo, Silar (CC BY-SA 4.0), Eric.Ray (CC BY-SA 2.0), LoreenU (CC BY-SA 4.0).</p>
+  <p class="disc light">Contenuto informativo: non è consulenza personalizzata né raccomandazione di investimento. Esempi illustrativi; i rendimenti passati non garantiscono quelli futuri. Investire comporta il rischio di perdite.<br>Fonti: Confcommercio–Format Research, Black Friday 2026; Altroconsumo, «Offerte online: a gennaio i prezzi sono spesso uguali a quelli dell'ultimo Black Friday»; Scalapay, Black Friday 2025; D.Lgs. 26/2023 (Omnibus). Foto: Wikimedia Commons — Kgbo (CC BY-SA 4.0), Eric.Ray (CC BY-SA 2.0), Mario Pena «oneras».</p>
 </div>
-  <div class="gline" style="top:1240px"></div>
-<div class="coin" style="left:-80px;top:1160px"><span>€</span></div>
+  
 </section>
 </body></html>
